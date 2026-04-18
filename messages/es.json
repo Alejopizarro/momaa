@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "proyectos": "Proyectos",
+    "sobreNosotros": "Sobre Nosotros",
+    "servicios": "Servicios",
+    "contacto": "Contacto",
+    "cta": "Contáctanos"
+  },
+  "hero": {
+    "title1": "Arquitectura que",
+    "title2": "transforma espacios",
+    "subtitle": "Estudio de arquitectura en Marbella. Diseño residencial, urbanismo e interiorismo desde el año 2000 en la Costa del Sol.",
+    "ctaPrimary": "Ver proyectos",
+    "ctaSecondary": "Sobre nosotros",
+    "scroll": "Desplazar"
+  },
+  "stats": {
+    "items": [
+      { "value": "+25", "label": "Años de experiencia" },
+      { "value": "+200", "label": "Proyectos realizados" },
+      { "value": "+15", "label": "Premios internacionales" }
+    ]
+  },
+  "about": {
+    "stat": "+25",
+    "statLabel": "Años de experiencia",
+    "sectionLabel": "Sobre Nosotros",
+    "sectionTitle": "Arquitectura con propósito y sensibilidad",
+    "items": [
+      {
+        "title": "Nuestra filosofía",
+        "body": "Creemos en una arquitectura que responde al lugar, al cliente y al tiempo. Cada proyecto es una oportunidad para crear espacios que perduren y emocionen."
+      },
+      {
+        "title": "Nuestro equipo",
+        "body": "Un equipo multidisciplinar de arquitectos, interioristas y urbanistas con más de 25 años de experiencia en la Costa del Sol y proyectos internacionales."
+      },
+      {
+        "title": "Nuestro proceso",
+        "body": "Trabajamos de forma colaborativa con cada cliente, desde el primer boceto hasta la entrega de llaves, garantizando calidad y atención al detalle en cada fase."
+      }
+    ]
+  },
+  "services": {
+    "sectionLabel": "Servicios",
+    "sectionTitle": "Lo que ofrecemos",
+    "subtitle": "Soluciones integrales de arquitectura, diseño y urbanismo para proyectos residenciales y comerciales.",
+    "items": [
+      {
+        "icon": "home",
+        "title": "Arquitectura Residencial",
+        "body": "Diseño y construcción de villas, apartamentos y viviendas unifamiliares adaptadas a cada cliente y entorno."
+      },
+      {
+        "icon": "location_city",
+        "title": "Urbanismo",
+        "body": "Planificación urbana, ordenación del territorio y proyectos de uso mixto en la Costa del Sol."
+      },
+      {
+        "icon": "chair",
+        "title": "Interiorismo",
+        "body": "Diseño de interiores de alto nivel para espacios residenciales y comerciales con materiales de primera calidad."
+      },
+      {
+        "icon": "corporate_fare",
+        "title": "Arquitectura Comercial",
+        "body": "Hoteles, oficinas y espacios de trabajo diseñados para maximizar la experiencia del usuario y la eficiencia."
+      }
+    ]
+  },
+  "projects": {
+    "sectionLabel": "Proyectos",
+    "sectionTitle": "Nuestro trabajo",
+    "viewAll": "Ver todos los proyectos",
+    "viewProject": "Ver proyecto",
+    "items": [
+      {
+        "id": "casa-allure",
+        "title": "Casa Allure",
+        "location": "Sierra Blanca, Marbella",
+        "category": "Residencial",
+        "year": "2025"
+      },
+      {
+        "id": "consistorial",
+        "title": "Consistorial",
+        "location": "Casco Antiguo, Marbella",
+        "category": "Patrimonio",
+        "year": "2026"
+      },
+      {
+        "id": "the-deck",
+        "title": "The Deck",
+        "location": "Benahavís",
+        "category": "Urbanismo",
+        "year": "2025"
+      },
+      {
+        "id": "villa-ocean",
+        "title": "Villa Ocean",
+        "location": "Marbella",
+        "category": "Residencial",
+        "year": "2015"
+      },
+      {
+        "id": "las-joyas",
+        "title": "Las Joyas",
+        "location": "Estepona",
+        "category": "Residencial",
+        "year": "2022"
+      },
+      {
+        "id": "villa-alberquilla",
+        "title": "Villa Alberquilla",
+        "location": "La Virginia, Marbella",
+        "category": "Residencial",
+        "year": "2016"
+      }
+    ]
+  },
+  "contact": {
+    "sectionLabel": "Contacto",
+    "sectionTitle": "Hablemos de tu proyecto",
+    "namePlaceholder": "Nombre completo",
+    "emailPlaceholder": "Correo electrónico",
+    "phonePlaceholder": "Teléfono",
+    "projectType": "Tipo de proyecto",
+    "messagePlaceholder": "Cuéntanos sobre tu proyecto...",
+    "submit": "Enviar mensaje",
+    "subtitle": "Estamos disponibles para atenderte",
+    "address": "Urb. La Capellania, Parcela nº20\n29602 Marbella, Málaga",
+    "phone1": "+34 655 584 801",
+    "phone2": "+34 952 000 000",
+    "projectTypes": [
+      "Residencial",
+      "Interiorismo",
+      "Urbanismo",
+      "Espacio Público",
+      "Consulta general"
+    ],
+    "email": "andres@momaa.es"
+  },
+  "footer": {
+    "tagline": "Estudio de arquitectura en Marbella especializado en diseño residencial, urbanismo e interiorismo desde el año 2000.",
+    "nav": "Navegación",
+    "specialties": "Especialidades",
+    "specialtyItems": [
+      "Villas de Lujo",
+      "Interiorismo",
+      "Urbanismo",
+      "Rehabilitación",
+      "Dirección de Obra"
+    ],
+    "contactTitle": "Contacto",
+    "copyright": "© 2026 MoMaA · Moreno Mateo Arquitectos. Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "legal": "Aviso Legal"
+  }
+}
