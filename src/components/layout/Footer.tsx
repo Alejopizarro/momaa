@@ -17,24 +17,37 @@ export function Footer() {
   const specialties: string[] = t.raw('specialtyItems') as string[]
 
   return (
-    <footer className="bg-black pt-24 md:pt-32 pb-12 border-t border-white/5">
+    <footer className="bg-[#111111] pt-24 md:pt-32 pb-12">
       <div className="container-momaa">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10 mb-20 md:mb-28">
           {/* Brand */}
           <div className="md:col-span-2 lg:col-span-1">
-            <Link href={`/${locale}`} className="inline-block mb-8">
-              <span className="font-display text-4xl font-extrabold tracking-tighter text-white">MoMaA</span>
+            <Link href={`/${locale}`} className="inline-flex items-center mb-8" aria-label="MoMaA">
+              <img
+                src="/logo-momaa.svg"
+                alt="MoMaA"
+                className="h-7 w-auto"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-8 max-w-xs">
               {t('tagline')}
             </p>
             <div className="flex gap-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                className="text-[10px] font-black uppercase tracking-widest text-white/30 hover:text-primary transition-colors">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] font-black uppercase tracking-widest text-white/30 hover:text-[#E8572A] transition-colors duration-200"
+              >
                 Instagram
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                className="text-[10px] font-black uppercase tracking-widest text-white/30 hover:text-primary transition-colors">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] font-black uppercase tracking-widest text-white/30 hover:text-[#E8572A] transition-colors duration-200"
+              >
                 LinkedIn
               </a>
             </div>
@@ -42,14 +55,16 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-8">
+            <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 mb-8">
               {t('nav')}
             </h5>
             <ul className="space-y-5">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}
-                    className="text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-primary transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-[#E8572A] transition-colors duration-200"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -59,7 +74,7 @@ export function Footer() {
 
           {/* Specialties */}
           <div>
-            <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-8">
+            <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 mb-8">
               {t('specialties')}
             </h5>
             <ul className="space-y-5">
@@ -75,25 +90,31 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-8">
+            <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 mb-8">
               {t('contactTitle')}
             </h5>
             <div className="space-y-6">
               <div className="flex items-start gap-3">
-                <Icon name="location_on" className="text-primary mt-0.5" size="sm" />
+                <Icon name="location_on" className="text-[#E8572A] mt-0.5" size="sm" />
                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 leading-loose">
                   Urb. La Capellania, Parcela nº20<br />29602 Marbella, Málaga
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Icon name="call" className="text-primary" size="sm" />
-                <a href="tel:+34655584801" className="text-[10px] font-black uppercase tracking-[0.2em] text-white hover:text-primary transition-colors">
+                <Icon name="call" className="text-[#E8572A]" size="sm" />
+                <a
+                  href="tel:+34655584801"
+                  className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-[#E8572A] transition-colors duration-200"
+                >
                   +34 655 584 801
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Icon name="mail" className="text-primary" size="sm" />
-                <a href="mailto:andres@momaa.es" className="text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-primary transition-colors">
+                <Icon name="mail" className="text-[#E8572A]" size="sm" />
+                <a
+                  href="mailto:andres@momaa.es"
+                  className="text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-[#E8572A] transition-colors duration-200"
+                >
                   andres@momaa.es
                 </a>
               </div>
@@ -102,15 +123,24 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-5">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white/20">
+        <div
+          className="pt-10 flex flex-col md:flex-row justify-between items-center gap-5"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
+        >
+          <p className="text-[10px] font-bold uppercase tracking-widest text-white/25">
             {t('copyright')}
           </p>
           <div className="flex gap-10">
-            <Link href="#" className="text-[10px] font-bold uppercase tracking-widest text-white/20 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-[10px] font-bold uppercase tracking-widest text-white/25 hover:text-[#E8572A] transition-colors duration-200"
+            >
               {t('privacy')}
             </Link>
-            <Link href="#" className="text-[10px] font-bold uppercase tracking-widest text-white/20 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-[10px] font-bold uppercase tracking-widest text-white/25 hover:text-[#E8572A] transition-colors duration-200"
+            >
               {t('legal')}
             </Link>
           </div>

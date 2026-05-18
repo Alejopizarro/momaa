@@ -25,11 +25,11 @@ type Props = ButtonProps | LinkProps
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-primary text-black hover:bg-white active:scale-95',
+    'bg-[#E8572A] text-white hover:bg-[#d14820] active:scale-95',
   outline:
-    'border border-white/20 text-white hover:bg-white hover:text-black',
+    'border border-black/20 text-black hover:bg-black hover:text-white',
   ghost:
-    'text-primary hover:text-white',
+    'text-[#E8572A] hover:text-[#d14820]',
 }
 
 const sizeClasses: Record<Size, string> = {

@@ -12,8 +12,8 @@ export function Tag({ children, className, variant = 'default' }: TagProps) {
       className={cn(
         'inline-block px-3 py-1 text-[10px] font-black uppercase tracking-widest',
         variant === 'default'
-          ? 'border border-primary/50 text-primary'
-          : 'bg-primary text-black',
+          ? 'border border-[#E8572A]/50 text-[#E8572A]'
+          : 'bg-[#E8572A] text-white',
         className
       )}
     >

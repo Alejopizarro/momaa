@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Inter, Francois_One } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -11,13 +11,14 @@ import "../../styles/globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
-const syne = Syne({
+const francoisOne = Francois_One({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["600", "700", "800"],
+  weight: "400",
   display: "swap",
 });
 
@@ -50,7 +51,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="dark scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
@@ -58,7 +59,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${syne.variable} bg-bg text-white antialiased`}
+        className={`${inter.variable} ${francoisOne.variable} bg-bg text-[#111111] antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           <Navbar />

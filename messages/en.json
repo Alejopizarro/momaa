@@ -155,5 +155,37 @@
     "copyright": "© 2026 MoMaA · Moreno Mateo Arquitectos. All rights reserved.",
     "privacy": "Privacy Policy",
     "legal": "Legal Notice"
+  },
+  "blog": {
+    "sectionLabel": "News",
+    "sectionTitle": "Latest news",
+    "readMore": "Read more",
+    "viewAll": "View all news",
+    "articles": [
+      {
+        "id": "biblioteca-san-pedro",
+        "category": "Public Space",
+        "date": "2024",
+        "title": "New Public Library of San Pedro de Alcántara",
+        "excerpt": "MoMaA has been selected to design the new Municipal Library of San Pedro de Alcántara, a cultural space of over 1,300 m² conceived as a community hub with a focus on innovation and sustainability.",
+        "href": "https://momaa.es/noticias/"
+      },
+      {
+        "id": "consistorial-marbella",
+        "category": "Rehabilitation",
+        "date": "2023",
+        "title": "Winner: Marbella City Hall Rehabilitation Competition",
+        "excerpt": "The studio won the public competition for the rehabilitation of the Marbella City Hall building at Plaza de los Naranjos, a project co-funded by the EU Next Generation funds.",
+        "href": "https://momaa.es/noticias/"
+      },
+      {
+        "id": "arquitectura-sostenible",
+        "category": "Trends",
+        "date": "2023",
+        "title": "Sustainable Architecture on the Costa del Sol",
+        "excerpt": "Demand for sustainable and bioclimatic architecture on the Costa del Sol continues to grow. At MoMaA we have spent over 25 years integrating natural materials, energy efficiency and contextual design into every residential and public project.",
+        "href": "https://momaa.es/noticias/"
+      }
+    ]
   }
 }

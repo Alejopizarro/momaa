@@ -15,7 +15,7 @@ export function ContactSection() {
           {/* Left: form */}
           <div>
             <SectionLabel>{t('sectionLabel')}</SectionLabel>
-            <h2 className="heading-section text-white mb-12">
+            <h2 className="heading-section text-[#111111] mb-12">
               {t('sectionTitle')}
             </h2>
 
@@ -24,12 +24,12 @@ export function ContactSection() {
                 <input
                   type="text"
                   placeholder={t('namePlaceholder')}
-                  className="w-full bg-bg border border-white/10 text-white placeholder-white/25 px-5 py-4 text-sm focus:border-primary focus:outline-none transition-colors duration-200"
+                  className="w-full bg-white border border-black/10 text-[#111111] placeholder-black/25 px-5 py-4 text-sm focus:border-[#E8572A] focus:outline-none transition-colors duration-200"
                 />
                 <input
                   type="email"
                   placeholder={t('emailPlaceholder')}
-                  className="w-full bg-bg border border-white/10 text-white placeholder-white/25 px-5 py-4 text-sm focus:border-primary focus:outline-none transition-colors duration-200"
+                  className="w-full bg-white border border-black/10 text-[#111111] placeholder-black/25 px-5 py-4 text-sm focus:border-[#E8572A] focus:outline-none transition-colors duration-200"
                 />
               </div>
 
@@ -37,12 +37,12 @@ export function ContactSection() {
                 <input
                   type="tel"
                   placeholder={t('phonePlaceholder')}
-                  className="w-full bg-bg border border-white/10 text-white placeholder-white/25 px-5 py-4 text-sm focus:border-primary focus:outline-none transition-colors duration-200"
+                  className="w-full bg-white border border-black/10 text-[#111111] placeholder-black/25 px-5 py-4 text-sm focus:border-[#E8572A] focus:outline-none transition-colors duration-200"
                 />
-                <select className="w-full bg-bg border border-white/10 text-white/50 px-5 py-4 text-sm focus:border-primary focus:outline-none transition-colors duration-200 appearance-none">
-                  <option value="" disabled selected>{t('projectType')}</option>
+                <select className="w-full bg-white border border-black/10 text-black/50 px-5 py-4 text-sm focus:border-[#E8572A] focus:outline-none transition-colors duration-200 appearance-none">
+                  <option value="" disabled>{t('projectType')}</option>
                   {projectTypes.map((type) => (
-                    <option key={type} value={type} className="bg-surface text-white">{type}</option>
+                    <option key={type} value={type}>{type}</option>
                   ))}
                 </select>
               </div>
@@ -50,7 +50,7 @@ export function ContactSection() {
               <textarea
                 rows={5}
                 placeholder={t('messagePlaceholder')}
-                className="w-full bg-bg border border-white/10 text-white placeholder-white/25 px-5 py-4 text-sm focus:border-primary focus:outline-none transition-colors duration-200 resize-none"
+                className="w-full bg-white border border-black/10 text-[#111111] placeholder-black/25 px-5 py-4 text-sm focus:border-[#E8572A] focus:outline-none transition-colors duration-200 resize-none"
               />
 
               <Button variant="primary" size="lg" type="submit" className="w-full sm:w-auto">
@@ -62,37 +62,37 @@ export function ContactSection() {
           {/* Right: contact info */}
           <div className="flex flex-col justify-between gap-12">
             <div>
-              <p className="text-white/40 text-base leading-relaxed max-w-sm mb-12">
+              <p className="text-black/40 text-base leading-relaxed max-w-sm mb-12">
                 {t('subtitle')}
               </p>
 
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <Icon name="location_on" className="text-primary mt-0.5" size="md" />
+                  <Icon name="location_on" className="text-[#E8572A] mt-0.5" size="md" />
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/25 mb-1">Estudio</p>
-                    <p className="text-sm text-white/60 leading-relaxed whitespace-pre-line">{t('address')}</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-black/25 mb-1">Estudio</p>
+                    <p className="text-sm text-black/55 leading-relaxed whitespace-pre-line">{t('address')}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Icon name="call" className="text-primary mt-0.5" size="md" />
+                  <Icon name="call" className="text-[#E8572A] mt-0.5" size="md" />
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/25 mb-1">Teléfono</p>
-                    <a href={`tel:${t('phone1').replace(/\s/g, '')}`} className="text-sm text-white hover:text-primary transition-colors block">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-black/25 mb-1">Teléfono</p>
+                    <a href={`tel:${t('phone1').replace(/\s/g, '')}`} className="text-sm text-[#111111] hover:text-[#E8572A] transition-colors block">
                       {t('phone1')}
                     </a>
-                    <a href={`tel:${t('phone2').replace(/\s/g, '')}`} className="text-sm text-white hover:text-primary transition-colors block">
+                    <a href={`tel:${t('phone2').replace(/\s/g, '')}`} className="text-sm text-[#111111] hover:text-[#E8572A] transition-colors block">
                       {t('phone2')}
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Icon name="mail" className="text-primary mt-0.5" size="md" />
+                  <Icon name="mail" className="text-[#E8572A] mt-0.5" size="md" />
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/25 mb-1">Email</p>
-                    <a href={`mailto:${t('email')}`} className="text-sm text-white/60 hover:text-primary transition-colors">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-black/25 mb-1">Email</p>
+                    <a href={`mailto:${t('email')}`} className="text-sm text-black/55 hover:text-[#E8572A] transition-colors">
                       {t('email')}
                     </a>
                   </div>
@@ -101,8 +101,8 @@ export function ContactSection() {
             </div>
 
             {/* Decorative accent bar */}
-            <div className="bg-primary p-8 md:p-10">
-              <p className="font-display text-2xl md:text-3xl text-black font-bold leading-tight tracking-tight">
+            <div className="bg-[#E8572A] p-8 md:p-10">
+              <p className="font-display text-2xl md:text-3xl text-white font-bold leading-tight tracking-tight">
                 Marbella · Costa del Sol · España · Portugal
               </p>
             </div>

@@ -5,6 +5,7 @@ import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { BlogSection } from "@/components/sections/BlogSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
 type Locale = (typeof routing.locales)[number];
@@ -21,10 +22,11 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
   return (
     <>
       <HeroSection />
-      <FeaturedProjects />
       <StatsBar />
-      <AboutSection />
+      <FeaturedProjects />
       <ServicesSection />
+      <AboutSection />
+      <BlogSection />
       {/* <ContactSection /> */}
     </>
   );

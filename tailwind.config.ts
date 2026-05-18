@@ -2,17 +2,18 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
-  darkMode: "class",
+  darkMode: "media",
   theme: {
     extend: {
       colors: {
-        primary: "#C8FF00",
-        "primary-hover": "#d4ff33",
-        bg: "#0d0d0d",
-        surface: "#141414",
-        "surface-2": "#1a1a1a",
+        primary: "#E8572A",
+        "primary-hover": "#d14820",
+        bg: "#ffffff",
+        surface: "#f7f5f2",
+        "surface-2": "#efefef",
       },
       fontFamily: {
+        logo: ["var(--font-logo)", "serif"],
         display: ["var(--font-display)", "sans-serif"],
         sans: ["var(--font-sans)", "sans-serif"],
       },
