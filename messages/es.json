@@ -156,6 +156,18 @@
     "privacy": "Privacidad",
     "legal": "Aviso Legal"
   },
+  "projectsPage": {
+    "title": "Proyectos",
+    "subtitle": "Arquitectura, urbanismo e interiorismo desde el año 2000 en la Costa del Sol.",
+    "filterAll": "Todos",
+    "filterResidencial": "Residencial",
+    "filterPublico": "Espacio Público",
+    "filterUrbanismo": "Urbanismo",
+    "filterInteriorismo": "Interiorismo",
+    "filterEducacional": "Educacional",
+    "viewProject": "Ver proyecto",
+    "loadMore": "Cargar más"
+  },
   "blog": {
     "sectionLabel": "Noticias",
     "sectionTitle": "Últimas noticias",

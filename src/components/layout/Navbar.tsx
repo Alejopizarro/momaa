@@ -25,7 +25,7 @@ export function Navbar() {
   const currentLocaleLabel = locale === "es" ? "ES" : "EN";
 
   const navLinks = [
-    { href: `/${locale}#proyectos`, label: t("proyectos") },
+    { href: `/${locale}/projects`, label: t("proyectos") },
     { href: `/${locale}#sobre-nosotros`, label: t("sobreNosotros") },
     { href: `/${locale}#servicios`, label: t("servicios") },
     { href: `/${locale}#contacto`, label: t("contacto") },

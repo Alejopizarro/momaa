@@ -156,6 +156,18 @@
     "privacy": "Privacy Policy",
     "legal": "Legal Notice"
   },
+  "projectsPage": {
+    "title": "Projects",
+    "subtitle": "Architecture, urban planning and interior design since 2000 on the Costa del Sol.",
+    "filterAll": "All",
+    "filterResidencial": "Residential",
+    "filterPublico": "Public Space",
+    "filterUrbanismo": "Urban Planning",
+    "filterInteriorismo": "Interior Design",
+    "filterEducacional": "Educational",
+    "viewProject": "View project",
+    "loadMore": "Load more"
+  },
   "blog": {
     "sectionLabel": "News",
     "sectionTitle": "Latest news",

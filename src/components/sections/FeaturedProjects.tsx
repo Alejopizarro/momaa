@@ -46,7 +46,7 @@ export function FeaturedProjects() {
           </div>
           <Button
             as="link"
-            href={`/${locale}/proyectos`}
+            href={`/${locale}/projects`}
             variant="outline"
             size="md"
           >
@@ -128,7 +128,7 @@ function ProjectCard({
 
   return (
     <Link
-      href={`/${locale}/proyectos/${project.id}`}
+      href={`/${locale}/projects/${project.id}`}
       className="group relative overflow-hidden block"
       style={{ height: "480px" }}
     >

@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(npx tsc:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(mkdir -p \"c:/Users/alejo/Downloads/momaa-scaffolding/momaa/src/app/[locale]/proyectos/[id]\")",
+      "Bash(mkdir -p \"c:/Users/alejo/Downloads/momaa-scaffolding/momaa/src/app/[locale]/projects/[id]\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\alejo\\Downloads\\momaa-scaffolding\\momaa\\src\\app\\[locale]\\proyectos",
+      "c:\\Users\\alejo\\Downloads\\momaa-scaffolding\\momaa\\src\\app\\[locale]\\projects"
     ]
   }
 }

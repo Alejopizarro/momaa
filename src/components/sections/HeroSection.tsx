@@ -39,7 +39,7 @@ export function HeroSection() {
       style={{ height: "100svh", minHeight: "600px" }}
     >
       {/* Left / Top: text on white */}
-      <div className="relative bg-white flex items-center h-1/2 md:h-full w-full md:w-1/2">
+      <div className="relative bg-surface flex items-center h-1/2 md:h-full w-full md:w-1/2">
         <div className="w-full px-8 sm:px-12 md:px-16 lg:px-20 pt-16 md:pt-20">
           <div className="max-w-xl">
             <h1 className="heading-display text-[#111111] mb-6 md:mb-8 text-4xl md:text-5xl lg:text-6xl">
@@ -115,9 +115,7 @@ export function HeroSection() {
                   className="absolute inset-y-0 left-0 bg-[#E8572A] animate-progress"
                 />
               )}
-              {i < current && (
-                <span className="absolute inset-0 bg-white/40" />
-              )}
+              {i < current && <span className="absolute inset-0 bg-white/40" />}
             </button>
           ))}
         </div>
