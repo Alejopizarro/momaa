@@ -4,7 +4,14 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Button } from "@/components/atoms/Button";
 
-const SLIDES = ["/momaa-hero-5.jpg", "/momaa-hero-3.jpg", "/momaa-hero-1.jpg"];
+const SLIDES = [
+  "/casa-allure-marbella.jpg",
+  "/trapiche.jpeg",
+  "/luis-gongora.jpg",
+  "/monte-mayor-benahavis.jpg",
+  "/bungalow-monteros.jpg",
+  "/santamaria-golf.jpeg",
+];
 const AUTOPLAY_MS = 3000;
 const FADE_MS = 700;
 
@@ -34,13 +41,10 @@ export function HeroSection() {
   }, [current, paused, next]);
 
   return (
-    <header
-      className="flex flex-col md:flex-row w-full"
-      style={{ height: "100svh", minHeight: "600px" }}
-    >
+    <header className="flex flex-col md:flex-row h-[120vh] md:h-[100vh] min-h-screen">
       {/* Left / Top: text on white */}
       <div className="relative bg-surface flex items-center h-1/2 md:h-full w-full md:w-1/2">
-        <div className="w-full px-8 sm:px-12 md:px-16 lg:px-20 pt-16 md:pt-20">
+        <div className="w-full px-8 sm:px-12 md:px-16 lg:px-20 pt-32 pb-16">
           <div className="max-w-xl">
             <h1 className="heading-display text-[#111111] mb-6 md:mb-8 text-4xl md:text-5xl lg:text-6xl">
               {t("title1")} <br />

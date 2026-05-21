@@ -18,13 +18,23 @@ const PLACEHOLDER_IMAGES = [
 const getImage = (project: Project, index: number): string =>
   project.image ?? PLACEHOLDER_IMAGES[index % PLACEHOLDER_IMAGES.length];
 
-// Los 5 proyectos destacados aparecen primero en el hero
+// Los 15 proyectos con ficha de detalle aparecen primero en el hero
 const FEATURED_IDS = [
+  "rehabilitacion-consistorial-marbella",
   "the-deck-benahavis",
   "casa-allure-marbella",
-  "rehabilitacion-consistorial-marbella",
-  "cubierta-pabellon-carlos-cabezas",
   "el-trapiche-casa-8",
+  "apartamento-atico-bahia-marbella",
+  "fuente-bautismal-san-pedro",
+  "villa-monte-mayor-benahavis",
+  "49-viviendas-casares",
+  "las-joyas-estepona",
+  "bungalow-los-monteros",
+  "piscina-solarium-alicates-playas",
+  "cubierta-pabellon-carlos-cabezas",
+  "casa-l-nueva-andalucia",
+  "santa-maria-golf-casa-11",
+  "bungalow-caribplaya",
 ];
 
 const featuredProjects = FEATURED_IDS.map((id) =>
@@ -33,8 +43,8 @@ const featuredProjects = FEATURED_IDS.map((id) =>
 
 const remainingProjects = projects.filter((p) => !FEATURED_IDS.includes(p.id));
 
-// 5 cols × 4 filas = 20 proyectos
-const HERO_PROJECTS = [...featuredProjects, ...remainingProjects].slice(0, 20);
+// lg: 4 cols × 4 filas = 16 | mobile: 2 cols × 5 filas = 10
+const HERO_PROJECTS = [...featuredProjects, ...remainingProjects].slice(0, 16);
 
 interface HeroProjectsGridProps {
   translations: {
@@ -47,12 +57,12 @@ export function HeroProjectsGrid({ translations: _ }: HeroProjectsGridProps) {
   const locale = useLocale();
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-px bg-black w-full">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-black w-full">
       {HERO_PROJECTS.map((project, index) => (
         <Link
           key={project.id}
           href={`/${locale}/projects/${project.id}`}
-          className="relative block overflow-hidden h-[60vw] md:h-[30vw] lg:h-[24vw]"
+          className={`relative block overflow-hidden h-[50vw] lg:h-[28vw] ${index >= 10 ? "hidden lg:block" : ""}`}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >

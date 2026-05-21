@@ -75,6 +75,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2023",
     url: "https://momaa.es/casa-l-nueva-andalucia-marbella/",
+    image: "/luis-gongora.jpg",
   },
   {
     id: "santa-maria-golf-casa-11",
@@ -82,6 +83,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2023",
     url: "https://momaa.es/santa-maria-golf_casa-11_marbella/",
+    image: "/santamaria-golf.jpeg",
   },
   {
     id: "intervencion-parque-al-andalus",
@@ -104,6 +106,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2022",
     url: "https://momaa.es/reforma-de-apartamento-atico-en-bahia-de-marbella/",
+    image: "/bahia-marbella.jpg",
   },
   {
     id: "two-houses-fuengirola",
@@ -118,6 +121,7 @@ export const projects: Project[] = [
     category: "Interiorismo",
     year: "2022",
     url: "https://momaa.es/piscina-y-solarium-en-alicates-playas-marbella/",
+    image: "/alicates-marbella.jpg",
   },
   {
     id: "fuente-bautismal-san-pedro",
@@ -125,6 +129,7 @@ export const projects: Project[] = [
     category: "Espacio Público",
     year: "2022",
     url: "https://momaa.es/eliminacion-de-barreras-arquitectonicas-san-pedro-alcantara-marbella-2/",
+    image: "/fuente_bautismal.jpg",
   },
   {
     id: "49-viviendas-casares",
@@ -132,6 +137,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2021",
     url: "https://momaa.es/49-viviendas-en-casares/",
+    image: "/49-casares.jpg",
   },
   {
     id: "aparcamiento-ojen",
@@ -181,6 +187,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2021",
     url: "https://momaa.es/bungalow-los-monteros-marbella/",
+    image: "/bungalow-monteros.jpg",
   },
   {
     id: "british-school-marbella-2020",
@@ -223,6 +230,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2020",
     url: "https://momaa.es/villa-en-monte-mayor-benahavis/",
+    image: "/monte-mayor-benahavis.jpg",
   },
   {
     id: "aula-abierta-colegio-eic",
@@ -272,6 +280,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2019",
     url: "https://momaa.es/bungalow-en-caribplaya-marbella/",
+    image: "/bungalow-cariboplaya.jpg",
   },
   {
     id: "loft-design-marbella",

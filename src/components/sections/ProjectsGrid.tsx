@@ -17,6 +17,32 @@ const PLACEHOLDER_IMAGES = [
 
 const PAGE_SIZE = 10
 
+const FEATURED_IDS = [
+  "rehabilitacion-consistorial-marbella",
+  "the-deck-benahavis",
+  "casa-allure-marbella",
+  "las-joyas-estepona",
+  "el-trapiche-casa-8",
+  "apartamento-atico-bahia-marbella",
+  "fuente-bautismal-san-pedro",
+  "villa-monte-mayor-benahavis",
+  "49-viviendas-casares",
+  "bungalow-los-monteros",
+  "piscina-solarium-alicates-playas",
+  "cubierta-pabellon-carlos-cabezas",
+  "casa-l-nueva-andalucia",
+  "santa-maria-golf-casa-11",
+  "bungalow-caribplaya",
+]
+
+// Proyectos con ficha propia primero, resto después
+const sortedProjects = [
+  ...FEATURED_IDS.map((id) => projects.find((p) => p.id === id)).filter(
+    (p): p is Project => p !== undefined,
+  ),
+  ...projects.filter((p) => !FEATURED_IDS.includes(p.id)),
+]
+
 function getImage(project: Project): string {
   if (project.image) return project.image
   const index = projects.indexOf(project) % PLACEHOLDER_IMAGES.length
@@ -53,8 +79,8 @@ export function ProjectsGrid({ translations }: { translations: Translations }) {
 
   const filteredProjects =
     activeFilter === 'all'
-      ? projects
-      : projects.filter((p) => p.category === activeFilter)
+      ? sortedProjects
+      : sortedProjects.filter((p) => p.category === activeFilter)
 
   const visibleProjects = filteredProjects.slice(0, visibleCount)
   const hasMore = visibleCount < filteredProjects.length

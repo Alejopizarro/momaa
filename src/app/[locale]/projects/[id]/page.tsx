@@ -47,10 +47,10 @@ function GallerySlot({
   className?: string;
 }) {
   if (!src) {
-    return <div className={`${className} bg-[#e8e4e0] h-full`} />;
+    return <div className={`${className} bg-[#e8e4e0]`} />;
   }
   return (
-    <div className={`${className} relative overflow-hidden h-full`}>
+    <div className={`${className} relative overflow-hidden`}>
       <Image
         src={src}
         alt={alt}
@@ -335,30 +335,30 @@ export default function ProjectPage({
               {/* Grid asimétrico 2 filas */}
               <div className="flex flex-col gap-[3px]">
                 {/* Fila 1: 2/3 + 1/3 */}
-                <div className="flex gap-[3px] h-[240px] md:h-[380px]">
+                <div className="flex flex-col md:flex-row gap-[3px]">
                   <GallerySlot
                     src={visibleSlots[0]}
                     alt={`${title} 1`}
-                    className="w-2/3"
+                    className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
                   />
                   <GallerySlot
                     src={visibleSlots[1]}
                     alt={`${title} 2`}
-                    className="w-1/3"
+                    className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
                   />
                 </div>
 
                 {/* Fila 2: 1/3 + 2/3 */}
-                <div className="flex gap-[3px] h-[240px] md:h-[380px]">
+                <div className="flex flex-col md:flex-row gap-[3px]">
                   <GallerySlot
                     src={visibleSlots[2]}
                     alt={`${title} 3`}
-                    className="w-1/3"
+                    className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
                   />
                   <GallerySlot
                     src={visibleSlots[3]}
                     alt={`${title} 4`}
-                    className="w-2/3"
+                    className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
                   />
                 </div>
               </div>
