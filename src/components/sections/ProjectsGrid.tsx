@@ -1,21 +1,22 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { useState } from 'react'
-import { useLocale } from 'next-intl'
-import { projects, type Project, type ProjectCategory } from '@/data/projects'
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { useLocale } from "next-intl";
+import { projects, type Project, type ProjectCategory } from "@/data/projects";
+import { Icon } from "@/components/atoms/Icon";
 
 const PLACEHOLDER_IMAGES = [
-  '/momaa-hero-1.jpg',
-  '/momaa-hero-2.jpg',
-  '/momaa-hero-3.jpg',
-  '/momaa-hero-4.jpg',
-  '/momaa-hero-5.jpg',
-  '/momaa-hero-6.jpg',
-]
+  "/momaa-hero-1.jpg",
+  "/momaa-hero-2.jpg",
+  "/momaa-hero-3.jpg",
+  "/momaa-hero-4.jpg",
+  "/momaa-hero-5.jpg",
+  "/momaa-hero-6.jpg",
+];
 
-const PAGE_SIZE = 10
+const PAGE_SIZE = 10;
 
 const FEATURED_IDS = [
   "rehabilitacion-consistorial-marbella",
@@ -33,7 +34,8 @@ const FEATURED_IDS = [
   "casa-l-nueva-andalucia",
   "santa-maria-golf-casa-11",
   "bungalow-caribplaya",
-]
+  "villa-ocean",
+];
 
 // Proyectos con ficha propia primero, resto después
 const sortedProjects = [
@@ -41,53 +43,56 @@ const sortedProjects = [
     (p): p is Project => p !== undefined,
   ),
   ...projects.filter((p) => !FEATURED_IDS.includes(p.id)),
-]
+];
 
 function getImage(project: Project): string {
-  if (project.image) return project.image
-  const index = projects.indexOf(project) % PLACEHOLDER_IMAGES.length
-  return PLACEHOLDER_IMAGES[index]
+  if (project.image) return project.image;
+  const index = projects.indexOf(project) % PLACEHOLDER_IMAGES.length;
+  return PLACEHOLDER_IMAGES[index];
 }
 
 interface Translations {
-  filterAll: string
-  filterResidencial: string
-  filterPublico: string
-  filterUrbanismo: string
-  filterInteriorismo: string
-  filterEducacional: string
-  loadMore: string
+  filterAll: string;
+  filterResidencial: string;
+  filterPublico: string;
+  filterUrbanismo: string;
+  filterInteriorismo: string;
+  filterEducacional: string;
+  loadMore: string;
+  viewProject: string;
 }
 
 interface FilterButton {
-  value: ProjectCategory | 'all'
-  label: string
+  value: ProjectCategory | "all";
+  label: string;
 }
 
 export function ProjectsGrid({ translations }: { translations: Translations }) {
-  const [activeFilter, setActiveFilter] = useState<ProjectCategory | 'all'>('all')
-  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  const [activeFilter, setActiveFilter] = useState<ProjectCategory | "all">(
+    "all",
+  );
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const filters: FilterButton[] = [
-    { value: 'all',             label: translations.filterAll },
-    { value: 'Residencial',     label: translations.filterResidencial },
-    { value: 'Espacio Público', label: translations.filterPublico },
-    { value: 'Urbanismo',       label: translations.filterUrbanismo },
-    { value: 'Interiorismo',    label: translations.filterInteriorismo },
-    { value: 'Educacional',     label: translations.filterEducacional },
-  ]
+    { value: "all", label: translations.filterAll },
+    { value: "Residencial", label: translations.filterResidencial },
+    { value: "Espacio Público", label: translations.filterPublico },
+    { value: "Urbanismo", label: translations.filterUrbanismo },
+    { value: "Interiorismo", label: translations.filterInteriorismo },
+    { value: "Educacional", label: translations.filterEducacional },
+  ];
 
   const filteredProjects =
-    activeFilter === 'all'
+    activeFilter === "all"
       ? sortedProjects
-      : sortedProjects.filter((p) => p.category === activeFilter)
+      : sortedProjects.filter((p) => p.category === activeFilter);
 
-  const visibleProjects = filteredProjects.slice(0, visibleCount)
-  const hasMore = visibleCount < filteredProjects.length
+  const visibleProjects = filteredProjects.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredProjects.length;
 
-  function handleFilterChange(value: ProjectCategory | 'all') {
-    setActiveFilter(value)
-    setVisibleCount(PAGE_SIZE)
+  function handleFilterChange(value: ProjectCategory | "all") {
+    setActiveFilter(value);
+    setVisibleCount(PAGE_SIZE);
   }
 
   return (
@@ -101,8 +106,8 @@ export function ProjectsGrid({ translations }: { translations: Translations }) {
               onClick={() => handleFilterChange(f.value)}
               className={`text-[11px] uppercase tracking-[0.25em] font-bold px-4 py-2 border-b-2 -mb-px transition-colors duration-200 ${
                 activeFilter === f.value
-                  ? 'border-[#E8572A] text-[#E8572A]'
-                  : 'border-transparent text-black/40 hover:text-black'
+                  ? "border-[#E8572A] text-[#E8572A]"
+                  : "border-transparent text-black/40 hover:text-black"
               }`}
             >
               {f.label}
@@ -114,7 +119,11 @@ export function ProjectsGrid({ translations }: { translations: Translations }) {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black">
         {visibleProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard
+            key={project.id}
+            project={project}
+            viewLabel={translations.viewProject}
+          />
         ))}
       </div>
 
@@ -133,47 +142,55 @@ export function ProjectsGrid({ translations }: { translations: Translations }) {
         </div>
       )}
     </section>
-  )
+  );
 }
 
-function ProjectCard({ project }: { project: Project }) {
-  const [hovered, setHovered] = useState(false)
-  const locale = useLocale()
-  const imgSrc = getImage(project)
+function ProjectCard({
+  project,
+  viewLabel,
+}: {
+  project: Project;
+  viewLabel: string;
+}) {
+  const locale = useLocale();
+  const imgSrc = getImage(project);
 
   return (
     <Link
       href={`/${locale}/projects/${project.id}`}
-      className="relative block overflow-hidden aspect-square bg-black"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className="group relative overflow-hidden block aspect-square bg-black"
     >
       <Image
         src={imgSrc}
         alt={project.title}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
-        className={`object-cover transition-transform duration-700 ${
-          hovered ? 'scale-105' : 'scale-100'
-        }`}
+        quality={90}
+        className="object-cover transition-transform duration-[800ms] group-hover:scale-[1.03]"
       />
 
-      <div
-        className={`absolute inset-0 flex flex-col items-center justify-center text-center p-8 transition-opacity duration-[400ms] ${
-          hovered ? 'opacity-100' : 'opacity-0'
-        }`}
-        style={{ background: 'rgba(0,0,0,0.75)' }}
-      >
-        <span className="text-[10px] uppercase tracking-[0.4em] text-[#E8572A] font-bold mb-3">
-          {project.category}
-        </span>
-        <h3 className="font-display text-2xl md:text-3xl text-white leading-tight mb-3">
-          {project.title}
-        </h3>
-        <span className="text-[11px] uppercase tracking-widest text-white/50">
-          {project.year}
-        </span>
+      <div className="absolute inset-0 card-overlay" />
+
+      <div className="absolute inset-0 p-8 flex flex-col justify-end">
+        <div className="translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
+          <span className="inline-block px-3 py-1 mb-4 text-[10px] font-black uppercase tracking-widest bg-[#E8572A] text-white">
+            {project.category}
+          </span>
+          <h3 className="font-display text-xl md:text-2xl text-white mb-1 uppercase leading-tight">
+            {project.title}
+          </h3>
+          <p className="text-white/40 text-[10px] uppercase tracking-[0.25em]">
+            {project.year}
+          </p>
+        </div>
+
+        <div className="mt-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+          <span className="flex items-center gap-2 text-[#E8572A] text-[10px] font-black uppercase tracking-widest">
+            {viewLabel}
+            <Icon name="arrow_right_alt" size="sm" />
+          </span>
+        </div>
       </div>
     </Link>
-  )
+  );
 }

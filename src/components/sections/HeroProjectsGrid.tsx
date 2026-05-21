@@ -20,14 +20,14 @@ const getImage = (project: Project, index: number): string =>
 
 // Los 15 proyectos con ficha de detalle aparecen primero en el hero
 const FEATURED_IDS = [
-  "rehabilitacion-consistorial-marbella",
   "the-deck-benahavis",
   "casa-allure-marbella",
   "el-trapiche-casa-8",
+  "villa-monte-mayor-benahavis",
   "apartamento-atico-bahia-marbella",
   "fuente-bautismal-san-pedro",
-  "villa-monte-mayor-benahavis",
   "49-viviendas-casares",
+  "rehabilitacion-consistorial-marbella",
   "las-joyas-estepona",
   "bungalow-los-monteros",
   "piscina-solarium-alicates-playas",
@@ -35,6 +35,7 @@ const FEATURED_IDS = [
   "casa-l-nueva-andalucia",
   "santa-maria-golf-casa-11",
   "bungalow-caribplaya",
+  "villa-ocean",
 ];
 
 const featuredProjects = FEATURED_IDS.map((id) =>
@@ -70,10 +71,21 @@ export function HeroProjectsGrid({ translations: _ }: HeroProjectsGridProps) {
             src={getImage(project, index)}
             alt={project.title}
             fill
-            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+            sizes="(max-width: 1024px) 50vw, 25vw"
+            quality={90}
             className={`object-cover transition-opacity duration-300 ${
               hoveredIndex === index ? "opacity-0" : "opacity-100"
             }`}
+            style={{ filter: 'contrast(1.08) saturate(0.82) brightness(0.97)' }}
+          />
+
+          {/* Tono unificado — mix-blend-mode multiply da un tono cálido neutro a todas las fotos */}
+          <div
+            className="absolute inset-0 z-10 pointer-events-none"
+            style={{
+              background: 'rgba(30, 22, 14, 0.18)',
+              mixBlendMode: 'multiply',
+            }}
           />
 
           <div

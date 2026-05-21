@@ -442,6 +442,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2015",
     url: "https://momaa.es/villa-ocean/",
+    image: "/villa-ocean.jpg",
   },
   {
     id: "pergola-piscina",

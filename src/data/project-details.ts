@@ -538,6 +538,47 @@ export const projectDetails: ProjectDetail[] = [
       en: 'Watch project video',
     },
   },
+  {
+    id: 'villa-ocean',
+    title: {
+      es: 'Villa Ocean, Marbella',
+      en: 'Villa Ocean, Marbella',
+    },
+    category: {
+      es: 'Residencial',
+      en: 'Residential',
+    },
+    year: '2015',
+    architects: [
+      'Ángel Taborda. Arquitecto',
+      'Andrés M. Mateo. Arquitecto Técnico',
+      'Andrés M. Mateo. Project Manager',
+      'Marcresun. Constructora',
+    ],
+    studio: 'MoMaA',
+    location: 'Marbella, Málaga',
+    disciplines: {
+      es: ['Arquitectura', 'Dirección de Obra', 'Project Management'],
+      en: ['Architecture', 'Construction Management', 'Project Management'],
+    },
+    body: {
+      es: [
+        'Villa Ocean es una vivienda unifamiliar de líneas contemporáneas situada en una de las zonas más privilegiadas de Marbella, concebida para establecer un diálogo constante entre la arquitectura y el mar Mediterráneo.',
+        'La distribución interior se articula en torno a amplios espacios abiertos que maximizan las vistas y la entrada de luz natural, mientras que la elección de materiales nobles y la atención al detalle constructivo definen un resultado de alta calidad y vocación duradera.',
+        'El proyecto contó con la dirección técnica y gestión de proyecto de Andrés M. Mateo, garantizando el control de calidad y los plazos de ejecución con la constructora Marcresun.',
+      ],
+      en: [
+        'Villa Ocean is a contemporary single-family home situated in one of the most privileged areas of Marbella, conceived to establish a constant dialogue between architecture and the Mediterranean Sea.',
+        'The interior layout is articulated around generous open spaces that maximise the views and natural light, while the selection of quality materials and attention to constructive detail define a high-quality, enduring result.',
+        'The project was managed by Andrés M. Mateo as Technical Architect and Project Manager, ensuring quality control and construction timelines in collaboration with Marcresun.',
+      ],
+    },
+    externalUrl: 'https://momaa.es/villa-ocean/',
+    externalLabel: {
+      es: 'Ver en MoMaA',
+      en: 'View on MoMaA',
+    },
+  },
 ]
 
 export function getProjectDetail(id: string): ProjectDetail | undefined {
