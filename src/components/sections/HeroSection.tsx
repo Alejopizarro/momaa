@@ -41,7 +41,7 @@ export function HeroSection() {
   }, [current, paused, next]);
 
   return (
-    <header className="flex flex-col md:flex-row h-[120vh] md:h-[100vh] min-h-screen">
+    <header className="flex flex-col md:flex-row h-[130vh] md:h-[100vh] min-h-screen">
       {/* Left / Top: text on white */}
       <div className="relative bg-surface flex items-center h-1/2 md:h-full w-full md:w-1/2">
         <div className="w-full px-8 sm:px-12 md:px-16 lg:px-20 pt-32 pb-16">
@@ -100,6 +100,13 @@ export function HeroSection() {
               alt={`MoMaA arquitectura slide ${i + 1}`}
               className="absolute inset-0 w-full h-full object-cover object-center"
               loading={i === 0 ? "eager" : "lazy"}
+              style={{
+                // Ken Burns: alterna zoom-in/out infinitamente, siempre en movimiento
+                // animationDelay negativo = arranca ya en mitad del ciclo, nunca estático
+                animation: `${i % 2 === 0 ? 'kenBurnsIn' : 'kenBurnsOut'} 8s ease-in-out infinite alternate`,
+                animationDelay: `${i * -2.6}s`,
+                willChange: 'transform',
+              }}
             />
             <div className="absolute inset-0 hero-overlay" />
           </div>
