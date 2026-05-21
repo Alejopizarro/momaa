@@ -1,7 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
+import { useLocale } from 'next-intl'
 import { projects, type Project, type ProjectCategory } from '@/data/projects'
 
 const PLACEHOLDER_IMAGES = [
@@ -110,13 +112,12 @@ export function ProjectsGrid({ translations }: { translations: Translations }) {
 
 function ProjectCard({ project }: { project: Project }) {
   const [hovered, setHovered] = useState(false)
+  const locale = useLocale()
   const imgSrc = getImage(project)
 
   return (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={`/${locale}/projects/${project.id}`}
       className="relative block overflow-hidden aspect-square bg-black"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -147,6 +148,6 @@ function ProjectCard({ project }: { project: Project }) {
           {project.year}
         </span>
       </div>
-    </a>
+    </Link>
   )
 }

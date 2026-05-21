@@ -1,68 +1,74 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useState } from 'react'
-import { projects } from '@/data/projects'
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { useLocale } from "next-intl";
+import { projects, type Project } from "@/data/projects";
 
 const PLACEHOLDER_IMAGES = [
-  '/momaa-hero-1.jpg',
-  '/momaa-hero-2.jpg',
-  '/momaa-hero-3.jpg',
-  '/momaa-hero-4.jpg',
-  '/momaa-hero-5.jpg',
-  '/momaa-hero-6.jpg',
-]
+  "/momaa-hero-1.jpg",
+  "/momaa-hero-2.jpg",
+  "/momaa-hero-3.jpg",
+  "/momaa-hero-4.jpg",
+  "/momaa-hero-5.jpg",
+  "/momaa-hero-6.jpg",
+];
 
-const getImage = (index: number) => PLACEHOLDER_IMAGES[index % PLACEHOLDER_IMAGES.length]
+const getImage = (project: Project, index: number): string =>
+  project.image ?? PLACEHOLDER_IMAGES[index % PLACEHOLDER_IMAGES.length];
 
-// Los 24 proyectos más recientes (ya ordenados por año desc en projects.ts)
-const HERO_PROJECTS = projects.slice(0, 24)
+// Los 5 proyectos destacados aparecen primero en el hero
+const FEATURED_IDS = [
+  "the-deck-benahavis",
+  "casa-allure-marbella",
+  "rehabilitacion-consistorial-marbella",
+  "cubierta-pabellon-carlos-cabezas",
+  "el-trapiche-casa-8",
+];
+
+const featuredProjects = FEATURED_IDS.map((id) =>
+  projects.find((p) => p.id === id),
+).filter((p): p is NonNullable<typeof p> => p !== undefined);
+
+const remainingProjects = projects.filter((p) => !FEATURED_IDS.includes(p.id));
+
+// 5 cols × 4 filas = 20 proyectos
+const HERO_PROJECTS = [...featuredProjects, ...remainingProjects].slice(0, 20);
 
 interface HeroProjectsGridProps {
   translations: {
-    viewProject: string
-  }
+    viewProject: string;
+  };
 }
 
 export function HeroProjectsGrid({ translations: _ }: HeroProjectsGridProps) {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const locale = useLocale();
 
   return (
-    <div
-      className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-px bg-black w-full"
-    >
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-px bg-black w-full">
       {HERO_PROJECTS.map((project, index) => (
-        <div
+        <Link
           key={project.id}
-          className="relative overflow-hidden cursor-pointer aspect-[4/3]"
+          href={`/${locale}/projects/${project.id}`}
+          className="relative block overflow-hidden h-[60vw] md:h-[30vw] lg:h-[24vw]"
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
-          onClick={() => setHoveredIndex(hoveredIndex === index ? null : index)}
         >
-          {/* Imagen de fondo */}
-          <div
-            className={`absolute inset-0 transition-opacity duration-300 ${
-              hoveredIndex === index ? 'opacity-0' : 'opacity-100'
+          <Image
+            src={getImage(project, index)}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+            className={`object-cover transition-opacity duration-300 ${
+              hoveredIndex === index ? "opacity-0" : "opacity-100"
             }`}
-          >
-            <Image
-              src={getImage(index)}
-              alt={project.title}
-              fill
-              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
-              className="object-cover"
-            />
-          </div>
+          />
 
-          {/* Overlay oscuro — celdas inactivas cuando otra está en hover */}
-          {hoveredIndex !== null && hoveredIndex !== index && (
-            <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 z-10" />
-          )}
-
-          {/* Contenido hover — celda activa: fondo blanco + texto */}
           <div
-            className={`absolute inset-0 flex flex-col items-center justify-center bg-white transition-opacity duration-300 z-20 p-4 text-center ${
-              hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 z-20 flex flex-col items-center justify-center p-4 text-center bg-white transition-opacity duration-300 ${
+              hoveredIndex === index ? "opacity-100" : "opacity-0"
             }`}
           >
             <span className="text-[10px] uppercase tracking-[0.3em] text-[#E8572A] font-bold mb-2">
@@ -75,8 +81,8 @@ export function HeroProjectsGrid({ translations: _ }: HeroProjectsGridProps) {
               {project.year}
             </span>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
-  )
+  );
 }

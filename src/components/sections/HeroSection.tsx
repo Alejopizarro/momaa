@@ -65,6 +65,7 @@ export function HeroSection() {
                 href={`/${locale}#sobre-nosotros`}
                 variant="outline"
                 size="lg"
+                className="bg-white"
               >
                 {t("ctaSecondary")}
               </Button>

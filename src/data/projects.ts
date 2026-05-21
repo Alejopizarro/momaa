@@ -21,6 +21,7 @@ export const projects: Project[] = [
     category: "Espacio Público",
     year: "2026",
     url: "https://momaa.es/rehabilitacion-edfificio-consistorial-exmo-ayuntamiento-de-marbella/",
+    image: "/ayuntamiento-marbella.jpg",
   },
   {
     id: "centro-usos-multiples-ermita-calvario",
@@ -35,6 +36,7 @@ export const projects: Project[] = [
     category: "Urbanismo",
     year: "2025",
     url: "https://momaa.es/edificio-programatico-the-deck-benahavis/",
+    image: "/the-deck.jpeg",
   },
   {
     id: "biblioteca-san-pedro",
@@ -49,6 +51,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2025",
     url: "https://momaa.es/casa-allure_marbella/",
+    image: "/casa-allure-marbella.jpg",
   },
   {
     id: "cubierta-pabellon-carlos-cabezas",
@@ -56,6 +59,7 @@ export const projects: Project[] = [
     category: "Espacio Público",
     year: "2024",
     url: "https://momaa.es/cubierta-pista-deportiva-pabellon-carlos-cabeza-marbella/",
+    image: "/pabellon-carlos-cabezas.jpg",
   },
   {
     id: "el-trapiche-casa-8",
@@ -63,6 +67,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2023",
     url: "https://momaa.es/el-trapiche_casa-8_marbella/",
+    image: "/trapiche.jpeg",
   },
   {
     id: "casa-l-nueva-andalucia",
@@ -91,6 +96,7 @@ export const projects: Project[] = [
     category: "Residencial",
     year: "2022",
     url: "https://momaa.es/68-viviendas-en-estepona/",
+    image: "/lasjoyas-estepona.jpg",
   },
   {
     id: "apartamento-atico-bahia-marbella",

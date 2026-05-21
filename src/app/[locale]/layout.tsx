@@ -23,6 +23,7 @@ const francoisOne = Francois_One({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://momaa.es"),
   title: "MoMaA | Arquitectos en Marbella",
   description:
     "Estudio de arquitectura en Marbella. Diseño residencial, urbanismo e interiorismo desde el año 2000 en la Costa del Sol.",
