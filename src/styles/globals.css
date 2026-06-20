@@ -177,3 +177,19 @@ body {
 .animate-progress {
   animation: progressBar 3s linear forwards;
 }
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0eeeb 0%,
+    #e6e3df 45%,
+    #f0eeeb 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
