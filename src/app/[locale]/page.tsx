@@ -52,7 +52,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       <StatsBar />
       <FeaturedProjects />
       <InstagramGrid
-        posts={INSTAGRAM_POSTS}
+        posts={INSTAGRAM_POSTS_2}
         columns={2}
         sectionLabel="Instagram"
         title="Síguenos en Instagram"
@@ -62,7 +62,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       <AboutSection />
       <BlogSection />
       <InstagramGrid
-        posts={INSTAGRAM_POSTS_2}
+        posts={INSTAGRAM_POSTS}
         columns={2}
         sectionLabel="Instagram"
         title="Últimos proyectos"
