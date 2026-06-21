@@ -158,27 +158,29 @@ function InstagramCard({ post, index }: { post: InstagramPost; index: number }) 
       </div>
 
       {/* Embed area — height driven by embed.js, not by us */}
-      <div ref={embedWrapRef} className="relative w-full">
+      <div
+        ref={embedWrapRef}
+        className="relative w-full"
+        style={!embedReady ? { minHeight: 500 } : undefined}
+      >
         {/*
-          Skeleton: in normal flow (gives height) while embed not ready.
-          Becomes absolute overlay (no height impact) while fading out.
+          Skeleton: absolute overlay on top while embed loads, fades out when ready.
+          Never in normal flow so it doesn't fight the embed for height.
         */}
         <div
-          className={`z-10 transition-opacity duration-700 ${
-            embedReady
-              ? 'opacity-0 pointer-events-none absolute inset-0'
-              : 'opacity-100 relative'
+          className={`absolute inset-0 z-10 transition-opacity duration-700 ${
+            embedReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`}
         >
           <CardSkeleton />
         </div>
 
         {/*
-          Blockquote wrapper: kept out of flow (absolute + opacity-0) while skeleton
-          is showing, so it doesn't contribute to card height yet.
-          Once embedReady, becomes part of normal flow at its natural height.
+          Embed always in normal flow and never hidden with opacity-0.
+          iOS Safari fails to initialize the video renderer inside opacity-0 containers,
+          causing the video to play audio but freeze on the poster frame.
         */}
-        <div className={embedReady ? 'relative' : 'absolute inset-0 opacity-0 overflow-hidden'}>
+        <div>
           {visible && (
             <blockquote
               className="instagram-media"
