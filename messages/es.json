@@ -168,6 +168,12 @@
     "viewProject": "Ver proyecto",
     "loadMore": "Cargar más"
   },
+  "instagram": {
+    "sectionLabel": "Instagram",
+    "followUs": "Síguenos en Instagram",
+    "latestProjects": "Últimos proyectos",
+    "followLink": "Seguir en Instagram"
+  },
   "blog": {
     "sectionLabel": "Noticias",
     "sectionTitle": "Últimas noticias",

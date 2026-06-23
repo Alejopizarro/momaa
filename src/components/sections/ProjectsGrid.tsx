@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useLocale } from "next-intl";
-import { projects, type Project, type ProjectCategory } from "@/data/projects";
+import { projects, getTitle, type Project, type ProjectCategory } from "@/data/projects";
 import { Icon } from "@/components/atoms/Icon";
 
 const PLACEHOLDER_IMAGES = [
@@ -60,6 +60,17 @@ interface Translations {
   filterEducacional: string;
   loadMore: string;
   viewProject: string;
+}
+
+function categoryLabel(category: ProjectCategory, t: Translations): string {
+  const map: Record<ProjectCategory, string> = {
+    Residencial: t.filterResidencial,
+    "Espacio Público": t.filterPublico,
+    Urbanismo: t.filterUrbanismo,
+    Interiorismo: t.filterInteriorismo,
+    Educacional: t.filterEducacional,
+  };
+  return map[category] ?? category;
 }
 
 interface FilterButton {
@@ -123,6 +134,7 @@ export function ProjectsGrid({ translations }: { translations: Translations }) {
             key={project.id}
             project={project}
             viewLabel={translations.viewProject}
+            translations={translations}
           />
         ))}
       </div>
@@ -148,9 +160,11 @@ export function ProjectsGrid({ translations }: { translations: Translations }) {
 function ProjectCard({
   project,
   viewLabel,
+  translations,
 }: {
   project: Project;
   viewLabel: string;
+  translations: Translations;
 }) {
   const locale = useLocale();
   const imgSrc = getImage(project);
@@ -162,7 +176,7 @@ function ProjectCard({
     >
       <Image
         src={imgSrc}
-        alt={project.title}
+        alt={getTitle(project, locale)}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
         quality={90}
@@ -174,10 +188,10 @@ function ProjectCard({
       <div className="absolute inset-0 p-8 flex flex-col justify-end">
         <div className="translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
           <span className="inline-block px-3 py-1 mb-4 text-[10px] font-black uppercase tracking-widest bg-[#E8572A] text-white">
-            {project.category}
+            {categoryLabel(project.category, translations)}
           </span>
           <h3 className="font-display text-xl md:text-2xl text-white mb-1 uppercase leading-tight">
-            {project.title}
+            {getTitle(project, locale)}
           </h3>
           <p className="text-white/40 text-[10px] uppercase tracking-[0.25em]">
             {project.year}

@@ -8,16 +8,22 @@ export type ProjectCategory =
 export interface Project {
   id: string;
   title: string;
+  titleEn?: string;
   category: ProjectCategory;
   year: string;
   url: string;
   image?: string;
 }
 
+export function getTitle(project: Project, locale: string): string {
+  return locale === "en" && project.titleEn ? project.titleEn : project.title;
+}
+
 export const projects: Project[] = [
   {
     id: "rehabilitacion-consistorial-marbella",
     title: "Rehabilitación Edificio Consistorial Ayto. Marbella",
+    titleEn: "Marbella City Hall Rehabilitation",
     category: "Espacio Público",
     year: "2026",
     url: "https://momaa.es/rehabilitacion-edfificio-consistorial-exmo-ayuntamiento-de-marbella/",
@@ -26,6 +32,7 @@ export const projects: Project[] = [
   {
     id: "centro-usos-multiples-ermita-calvario",
     title: "Centro de Usos Múltiples junto a la Ermita del Calvario",
+    titleEn: "Multi-Use Centre at the Ermita del Calvario",
     category: "Espacio Público",
     year: "2026",
     url: "https://momaa.es/reforma-del-centro-de-tecnificacion-de-gimnasia-ritmica-en-marbella-2/",
@@ -33,6 +40,7 @@ export const projects: Project[] = [
   {
     id: "the-deck-benahavis",
     title: 'Edificio Programático "The Deck", Benahavís',
+    titleEn: '"The Deck" Programmatic Building, Benahavís',
     category: "Urbanismo",
     year: "2025",
     url: "https://momaa.es/edificio-programatico-the-deck-benahavis/",
@@ -41,6 +49,7 @@ export const projects: Project[] = [
   {
     id: "biblioteca-san-pedro",
     title: "Biblioteca Municipal de San Pedro de Alcántara",
+    titleEn: "San Pedro de Alcántara Municipal Library",
     category: "Espacio Público",
     year: "2025",
     url: "https://momaa.es/2025-el-estudio-de-arquitectura-momaa-celebra-la-ejecucion-de-su-proyecto-para-la-biblioteca-de-san-pedro-de-alcantara/",
@@ -56,6 +65,7 @@ export const projects: Project[] = [
   {
     id: "cubierta-pabellon-carlos-cabezas",
     title: "Cubierta Pista Deportiva Pabellón Carlos Cabezas, Marbella",
+    titleEn: "Sports Court Roof, Carlos Cabezas Pavilion, Marbella",
     category: "Espacio Público",
     year: "2024",
     url: "https://momaa.es/cubierta-pista-deportiva-pabellon-carlos-cabeza-marbella/",
@@ -64,6 +74,7 @@ export const projects: Project[] = [
   {
     id: "el-trapiche-casa-8",
     title: "El Trapiche, Casa 8, Marbella",
+    titleEn: "El Trapiche, House 8, Marbella",
     category: "Residencial",
     year: "2023",
     url: "https://momaa.es/el-trapiche_casa-8_marbella/",
@@ -72,6 +83,7 @@ export const projects: Project[] = [
   {
     id: "casa-l-nueva-andalucia",
     title: "Casa L. Luis de Góngora, Nueva Andalucía, Marbella",
+    titleEn: "House L. Luis de Góngora, Nueva Andalucía, Marbella",
     category: "Residencial",
     year: "2023",
     url: "https://momaa.es/casa-l-nueva-andalucia-marbella/",
@@ -80,6 +92,7 @@ export const projects: Project[] = [
   {
     id: "santa-maria-golf-casa-11",
     title: "Santa María Golf, Casa 11, Marbella",
+    titleEn: "Santa María Golf, House 11, Marbella",
     category: "Residencial",
     year: "2023",
     url: "https://momaa.es/santa-maria-golf_casa-11_marbella/",
@@ -88,6 +101,7 @@ export const projects: Project[] = [
   {
     id: "intervencion-parque-al-andalus",
     title: "Creando Ciudad — Intervención Urbana Parque Al Ándalus",
+    titleEn: "Creating City — Urban Intervention Al Ándalus Park",
     category: "Urbanismo",
     year: "2023",
     url: "https://momaa.es/20230921-creando-ciudad-intervencion-urbana-parque-al-andalus/",
@@ -95,6 +109,7 @@ export const projects: Project[] = [
   {
     id: "las-joyas-estepona",
     title: '68 Viviendas "Las Joyas", Estepona',
+    titleEn: '68 Homes "Las Joyas", Estepona',
     category: "Residencial",
     year: "2022",
     url: "https://momaa.es/68-viviendas-en-estepona/",
@@ -103,6 +118,7 @@ export const projects: Project[] = [
   {
     id: "apartamento-atico-bahia-marbella",
     title: "Reforma Apartamento Ático, Bahía de Marbella",
+    titleEn: "Penthouse Apartment Renovation, Bahía de Marbella",
     category: "Residencial",
     year: "2022",
     url: "https://momaa.es/reforma-de-apartamento-atico-en-bahia-de-marbella/",
@@ -118,6 +134,7 @@ export const projects: Project[] = [
   {
     id: "piscina-solarium-alicates-playas",
     title: "Piscina y Solarium en Alicates Playas, Marbella",
+    titleEn: "Pool and Solarium at Alicates Playas, Marbella",
     category: "Interiorismo",
     year: "2022",
     url: "https://momaa.es/piscina-y-solarium-en-alicates-playas-marbella/",
@@ -126,6 +143,7 @@ export const projects: Project[] = [
   {
     id: "fuente-bautismal-san-pedro",
     title: "Fuente Bautismal, San Pedro Alcántara, Marbella",
+    titleEn: "Baptismal Fountain, San Pedro Alcántara, Marbella",
     category: "Espacio Público",
     year: "2022",
     url: "https://momaa.es/eliminacion-de-barreras-arquitectonicas-san-pedro-alcantara-marbella-2/",
@@ -134,6 +152,7 @@ export const projects: Project[] = [
   {
     id: "49-viviendas-casares",
     title: "49 Viviendas en Casares — Royal Casares Homes",
+    titleEn: "49 Homes in Casares — Royal Casares Homes",
     category: "Residencial",
     year: "2021",
     url: "https://momaa.es/49-viviendas-en-casares/",
@@ -142,6 +161,7 @@ export const projects: Project[] = [
   {
     id: "aparcamiento-ojen",
     title: "Aparcamiento Subterráneo junto al Centro Médico, Ojén",
+    titleEn: "Underground Car Park at Medical Centre, Ojén",
     category: "Urbanismo",
     year: "2021",
     url: "https://momaa.es/aparcamiento-sub-terraneo-junto-al-centro-medico-ojen/",
@@ -149,6 +169,7 @@ export const projects: Project[] = [
   {
     id: "casa-torreon-marbella",
     title: "Casa Torreón, Ampliación y Rehabilitación, Marbella",
+    titleEn: "Casa Torreón, Extension and Renovation, Marbella",
     category: "Residencial",
     year: "2021",
     url: "https://momaa.es/casa-torreon-ampliacion-y-rehabilitacion-de-vivienda-unifamiliar-marbella/",
@@ -156,6 +177,7 @@ export const projects: Project[] = [
   {
     id: "escuela-danza-musica-san-pedro",
     title: "Escuela de Danza y Música, San Pedro de Alcántara",
+    titleEn: "Dance and Music School, San Pedro de Alcántara",
     category: "Espacio Público",
     year: "2021",
     url: "https://momaa.es/escuela-de-danza-y-musica-san-pedro-de-alcantara-marbella/",
@@ -163,6 +185,7 @@ export const projects: Project[] = [
   {
     id: "casa-tres-patios-marbella",
     title: "Casa Tres Patios, Vivienda Entre Medianeras, Marbella",
+    titleEn: "Casa Tres Patios, Party Wall House, Marbella",
     category: "Residencial",
     year: "2021",
     url: "https://momaa.es/casa-tres-patios-vivienda-entre-medianeras-marbella/",
@@ -170,6 +193,7 @@ export const projects: Project[] = [
   {
     id: "eliminacion-barreras-san-pedro",
     title: "Eliminación de Barreras Arquitectónicas, San Pedro Alcántara",
+    titleEn: "Architectural Barriers Removal, San Pedro Alcántara",
     category: "Espacio Público",
     year: "2021",
     url: "https://momaa.es/eliminacion-de-barreras-arquitectonicas-san-pedro-alcantara-marbella/",
@@ -177,6 +201,7 @@ export const projects: Project[] = [
   {
     id: "pasarela-madera-marbella",
     title: "Pasarela Madera Marbella, Málaga",
+    titleEn: "Timber Walkway Marbella, Málaga",
     category: "Urbanismo",
     year: "2021",
     url: "https://momaa.es/pasarela-madera-marbella-malaga/",
@@ -184,6 +209,7 @@ export const projects: Project[] = [
   {
     id: "bungalow-los-monteros",
     title: "Rehabilitación Bungalow Los Monteros",
+    titleEn: "Los Monteros Bungalow Renovation",
     category: "Residencial",
     year: "2021",
     url: "https://momaa.es/bungalow-los-monteros-marbella/",
@@ -199,6 +225,7 @@ export const projects: Project[] = [
   {
     id: "expositor-british-school",
     title: "Expositor en British School Marbella",
+    titleEn: "Display Unit at British School Marbella",
     category: "Interiorismo",
     year: "2020",
     url: "https://momaa.es/diseno-libreria/",
@@ -206,6 +233,7 @@ export const projects: Project[] = [
   {
     id: "mostrador-bism",
     title: "Diseño Mostrador BISM",
+    titleEn: "BISM Reception Counter Design",
     category: "Interiorismo",
     year: "2020",
     url: "https://momaa.es/diseno-mostrador-colegio/",
@@ -213,6 +241,7 @@ export const projects: Project[] = [
   {
     id: "rehabilitacion-edificio-publico-marbella",
     title: "Rehabilitación Edificio Público Marbella, Málaga",
+    titleEn: "Public Building Renovation, Marbella, Málaga",
     category: "Espacio Público",
     year: "2020",
     url: "https://momaa.es/rehabilitacion-edificio-publico-marbella-malaga/",
@@ -220,6 +249,7 @@ export const projects: Project[] = [
   {
     id: "regeneracion-urbana-marbella",
     title: "Regeneración Urbana de Espacio Público Marbella",
+    titleEn: "Urban Regeneration of Public Space, Marbella",
     category: "Urbanismo",
     year: "2020",
     url: "https://momaa.es/regeneracion-urbana-de-espacio-publico-marbella/",
@@ -227,6 +257,7 @@ export const projects: Project[] = [
   {
     id: "villa-monte-mayor-benahavis",
     title: "Villa en Monte Mayor, Benahavís",
+    titleEn: "Villa in Monte Mayor, Benahavís",
     category: "Residencial",
     year: "2020",
     url: "https://momaa.es/villa-en-monte-mayor-benahavis/",
@@ -235,6 +266,7 @@ export const projects: Project[] = [
   {
     id: "aula-abierta-colegio-eic",
     title: "Aula Abierta para Colegio EIC",
+    titleEn: "Open Classroom for EIC School",
     category: "Educacional",
     year: "2020",
     url: "https://momaa.es/aula-abierta-para-colegio-eic/",
@@ -242,6 +274,7 @@ export const projects: Project[] = [
   {
     id: "oficina-turismo-san-pedro",
     title: "Oficina de Turismo San Pedro Alcántara",
+    titleEn: "San Pedro Alcántara Tourism Office",
     category: "Espacio Público",
     year: "2019",
     url: "https://momaa.es/oficina-turismo/",
@@ -249,6 +282,7 @@ export const projects: Project[] = [
   {
     id: "aparcamiento-guadalmina",
     title: "Aparcamiento Ecológico en Guadalmina, Marbella",
+    titleEn: "Eco Car Park at Guadalmina, Marbella",
     category: "Urbanismo",
     year: "2019",
     url: "https://momaa.es/aparcamiento-guadalmina/",
@@ -256,6 +290,7 @@ export const projects: Project[] = [
   {
     id: "colegio-internacional-lisbon",
     title: "Colegio Internacional Lisbon",
+    titleEn: "Lisbon International School",
     category: "Educacional",
     year: "2019",
     url: "https://momaa.es/colegio-internacional-lisbon/",
@@ -270,6 +305,7 @@ export const projects: Project[] = [
   {
     id: "oficina-boque-maison-lu",
     title: "Oficina Boqué Maison Lu, Marbella",
+    titleEn: "Boqué Maison Lu Office, Marbella",
     category: "Espacio Público",
     year: "2019",
     url: "https://momaa.es/oficina-bouque/",
@@ -277,6 +313,7 @@ export const projects: Project[] = [
   {
     id: "bungalow-caribplaya",
     title: "Rehabilitación de Bungalow Caribplaya",
+    titleEn: "Caribplaya Bungalow Renovation",
     category: "Residencial",
     year: "2019",
     url: "https://momaa.es/bungalow-en-caribplaya-marbella/",
@@ -299,6 +336,7 @@ export const projects: Project[] = [
   {
     id: "oficina-colegio-lisboa",
     title: "Oficina Colegio Lisboa",
+    titleEn: "Lisboa School Office",
     category: "Educacional",
     year: "2019",
     url: "https://momaa.es/oficina-colegio-lisboa/",
@@ -306,6 +344,7 @@ export const projects: Project[] = [
   {
     id: "rehabilitacion-apartamento-bahia-marbella",
     title: "Rehabilitación Apartamento Bahía de Marbella",
+    titleEn: "Bahía de Marbella Apartment Renovation",
     category: "Interiorismo",
     year: "2019",
     url: "https://momaa.es/rehabilitacion-apartamento-bahia-de-marbella/",
@@ -313,6 +352,7 @@ export const projects: Project[] = [
   {
     id: "pabellon-rio-verde-ii",
     title: "Pabellón Río Verde II, Marbella",
+    titleEn: "Río Verde II Pavilion, Marbella",
     category: "Residencial",
     year: "2018",
     url: "https://momaa.es/pabellon-rio-verde-ii/",
@@ -327,6 +367,7 @@ export const projects: Project[] = [
   {
     id: "colegio-jiangyn-china",
     title: "Colegio Jiangyn, China",
+    titleEn: "Jiangyn School, China",
     category: "Educacional",
     year: "2018",
     url: "https://momaa.es/colegio-jiangyn-china/",
@@ -334,6 +375,7 @@ export const projects: Project[] = [
   {
     id: "pabellon-rio-verde",
     title: "Pabellón Río Verde, Marbella",
+    titleEn: "Río Verde Pavilion, Marbella",
     category: "Residencial",
     year: "2018",
     url: "https://momaa.es/pabellon-rio-verde/",
@@ -341,6 +383,7 @@ export const projects: Project[] = [
   {
     id: "pabellon-musica-la-virginia",
     title: "Pabellón de la Música, La Virginia, Marbella",
+    titleEn: "Music Pavilion, La Virginia, Marbella",
     category: "Residencial",
     year: "2018",
     url: "https://momaa.es/pabellon-de-la-musica/",
@@ -348,6 +391,7 @@ export const projects: Project[] = [
   {
     id: "apartamento-coral-beach",
     title: "Apartamento, Coral Beach, Marbella",
+    titleEn: "Apartment, Coral Beach, Marbella",
     category: "Residencial",
     year: "2017",
     url: "https://momaa.es/casa-playa-esmeralda/",
@@ -355,6 +399,7 @@ export const projects: Project[] = [
   {
     id: "eic-nuevo-vestuario",
     title: "EIC Nuevo Vestuario",
+    titleEn: "EIC New Changing Rooms",
     category: "Educacional",
     year: "2017",
     url: "https://momaa.es/nuevo-vestuario-eic/",
@@ -390,6 +435,7 @@ export const projects: Project[] = [
   {
     id: "colegio-putian-china",
     title: "Colegio Putian, China",
+    titleEn: "Putian School, China",
     category: "Educacional",
     year: "2017",
     url: "https://momaa.es/colegio-en-china-2/",
@@ -404,6 +450,7 @@ export const projects: Project[] = [
   {
     id: "jacuzzi-en-terraza",
     title: "Jacuzzi en Terraza",
+    titleEn: "Terrace Jacuzzi",
     category: "Residencial",
     year: "2016",
     url: "https://momaa.es/obra-jacuzzi-en-terraza/",
@@ -411,6 +458,7 @@ export const projects: Project[] = [
   {
     id: "comedor-la-virginia",
     title: "Comedor en La Virginia, Marbella",
+    titleEn: "Dining Room in La Virginia, Marbella",
     category: "Interiorismo",
     year: "2016",
     url: "https://momaa.es/comedor-la-virginia-marbella/",
@@ -418,6 +466,7 @@ export const projects: Project[] = [
   {
     id: "parque-urbano-fuensanta",
     title: "Parque Urbano Fuensanta",
+    titleEn: "Fuensanta Urban Park",
     category: "Urbanismo",
     year: "2016",
     url: "https://momaa.es/concurso-parque-urbano-fuensanta-2/",
@@ -425,6 +474,7 @@ export const projects: Project[] = [
   {
     id: "fin-master-arquitectura",
     title: "Fin de Máster Arquitectura",
+    titleEn: "Architecture Master's Thesis",
     category: "Urbanismo",
     year: "2016",
     url: "https://momaa.es/fin-de-master-arquitectura/",
@@ -447,6 +497,7 @@ export const projects: Project[] = [
   {
     id: "pergola-piscina",
     title: "Pérgola de Piscina",
+    titleEn: "Pool Pergola",
     category: "Residencial",
     year: "2014",
     url: "https://momaa.es/obra-pergola-de-piscina/",
@@ -489,6 +540,7 @@ export const projects: Project[] = [
   {
     id: "villa-alicates-playas",
     title: "Villa en Alicates Playas, Marbella",
+    titleEn: "Villa in Alicates Playas, Marbella",
     category: "Residencial",
     year: "2003",
     url: "https://momaa.es/alicates-playas-35/",
@@ -496,6 +548,7 @@ export const projects: Project[] = [
   {
     id: "hermes-mansion",
     title: "Hermes Mansión, Marbella Golf Resort",
+    titleEn: "Hermes Mansion, Marbella Golf Resort",
     category: "Residencial",
     year: "2002",
     url: "https://momaa.es/club-golf-resort/",

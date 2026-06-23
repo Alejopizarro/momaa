@@ -3,8 +3,22 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "../../../../routing";
 import { HeroProjectsGrid } from "@/components/sections/HeroProjectsGrid";
 import { ProjectsGrid } from "@/components/sections/ProjectsGrid";
+import { InstagramGrid } from "@/components/sections/grid-instagram";
 
 type Locale = (typeof routing.locales)[number];
+
+const INSTAGRAM_POSTS = [
+  {
+    url: "https://www.instagram.com/reel/DZC0jXYIcls/?igsh=ZHMyNHE0bmoxZjVo",
+    description:
+      "Estamos finalizando!! Enorabuena a todo el equipo de crear esta vivienda unifamiliar de arquitectura contemporánea de estilo mediterráneo. El diseño destaca por una geometría limpia, un marcado juego de líneas horizontales y una integración directa con el espacio exterior.\nGracias\nAndres M. Mateo\nwww.momaa.es\n#ArquitecturaYPaisaje #momaa #architecture #MarbellaArquitectura #marbella",
+  },
+  {
+    url: "https://www.instagram.com/reel/DY7O5tWoeV3/?igsh=enN0Y3dyeWhsaDl6",
+    description:
+      "Entramos en la recta final de las obras del Centro de Tecnificación de Gimnasia Rítmica en Marbella. Nos llena de orgullo dar los últimos retoques a este lienzo arquitectónico que pronto se llenará de vida, música y vuelo. La cuenta atrás ha comenzado!!!!\nwww.momaa.es\n#ArquitecturaPoetica #DiseñoYMovimiento #MarbellaArquitectura #EspaciosVivos #GeometriaYLuz FinDeObra",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Projects | MoMaA Architects",
@@ -26,6 +40,7 @@ export default async function ProjectsPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("projectsPage");
+  const tIg = await getTranslations("instagram");
 
   const translations = {
     filterAll: t("filterAll"),
@@ -35,7 +50,7 @@ export default async function ProjectsPage({
     filterInteriorismo: t("filterInteriorismo"),
     filterEducacional: t("filterEducacional"),
     viewProject: t("viewProject"),
-    loadMore:    t("loadMore"),
+    loadMore: t("loadMore"),
   };
 
   return (
@@ -62,6 +77,13 @@ export default async function ProjectsPage({
           <ProjectsGrid translations={translations} />
         </div>
       </div>
+      <InstagramGrid
+        posts={INSTAGRAM_POSTS}
+        columns={2}
+        sectionLabel={tIg("sectionLabel")}
+        title={tIg("latestProjects")}
+        followUrl="https://www.instagram.com/momaa_architects?utm_source=qr&igsh=aGF2cnNiNjZ3dDFw"
+      />
     </>
   );
 }

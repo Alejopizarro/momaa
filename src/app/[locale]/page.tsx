@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "../../../routing";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
@@ -42,9 +42,10 @@ const INSTAGRAM_POSTS_2 = [
 ];
 
 // En Next.js 14 params NO es una Promise — es un objeto síncrono
-export default function HomePage({ params }: { params: { locale: Locale } }) {
+export default async function HomePage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
   setRequestLocale(locale);
+  const t = await getTranslations('instagram');
 
   return (
     <>
@@ -54,8 +55,8 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       <InstagramGrid
         posts={INSTAGRAM_POSTS_2}
         columns={2}
-        sectionLabel="Instagram"
-        title="Síguenos en Instagram"
+        sectionLabel={t('sectionLabel')}
+        title={t('followUs')}
         followUrl="https://www.instagram.com/momaa_architects?utm_source=qr&igsh=aGF2cnNiNjZ3dDFw"
       />
       <ServicesSection />
@@ -64,8 +65,8 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       <InstagramGrid
         posts={INSTAGRAM_POSTS}
         columns={2}
-        sectionLabel="Instagram"
-        title="Últimos proyectos"
+        sectionLabel={t('sectionLabel')}
+        title={t('latestProjects')}
         followUrl="https://www.instagram.com/momaa_architects?utm_source=qr&igsh=aGF2cnNiNjZ3dDFw"
       />
       {/* <ContactSection /> */}

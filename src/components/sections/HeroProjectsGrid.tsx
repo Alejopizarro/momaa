@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useLocale } from "next-intl";
-import { projects, type Project } from "@/data/projects";
+import { useLocale, useTranslations } from "next-intl";
+import { projects, getTitle, type Project } from "@/data/projects";
 
 const PLACEHOLDER_IMAGES = [
   "/momaa-hero-1.jpg",
@@ -56,6 +56,14 @@ interface HeroProjectsGridProps {
 export function HeroProjectsGrid({ translations: _ }: HeroProjectsGridProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const locale = useLocale();
+  const t = useTranslations("projectsPage");
+  const catLabel: Record<string, string> = {
+    Residencial: t("filterResidencial"),
+    "Espacio Público": t("filterPublico"),
+    Urbanismo: t("filterUrbanismo"),
+    Interiorismo: t("filterInteriorismo"),
+    Educacional: t("filterEducacional"),
+  };
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-black w-full">
@@ -69,7 +77,7 @@ export function HeroProjectsGrid({ translations: _ }: HeroProjectsGridProps) {
         >
           <Image
             src={getImage(project, index)}
-            alt={project.title}
+            alt={getTitle(project, locale)}
             fill
             sizes="(max-width: 1024px) 50vw, 25vw"
             quality={90}
@@ -94,10 +102,10 @@ export function HeroProjectsGrid({ translations: _ }: HeroProjectsGridProps) {
             }`}
           >
             <span className="text-[10px] uppercase tracking-[0.3em] text-[#E8572A] font-bold mb-2">
-              {project.category}
+              {catLabel[project.category] ?? project.category}
             </span>
             <h3 className="font-display text-xs md:text-sm lg:text-base text-black leading-tight mb-1">
-              {project.title}
+              {getTitle(project, locale)}
             </h3>
             <span className="text-xs text-black/40 uppercase tracking-widest">
               {project.year}

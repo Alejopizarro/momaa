@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Script from 'next/script'
+import { useTranslations } from 'next-intl'
 import { SectionLabel } from '@/components/atoms/SectionLabel'
 
 export interface InstagramPost {
@@ -417,6 +418,7 @@ export function InstagramGrid({
   title = 'Síguenos en Instagram',
   followUrl,
 }: InstagramGridProps) {
+  const t = useTranslations('instagram')
   const cols = ((columns ?? Math.min(posts.length, 4)) as 1 | 2 | 3 | 4)
 
   return (
@@ -444,7 +446,7 @@ export function InstagramGrid({
               rel="noopener noreferrer"
               className="group/link inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-black/40 hover:text-[#E8572A] transition-colors duration-200 shrink-0"
             >
-              Seguir en Instagram
+              {t('followLink')}
               <svg
                 width="14"
                 height="14"
