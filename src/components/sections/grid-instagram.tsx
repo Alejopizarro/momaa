@@ -89,7 +89,17 @@ function CardSkeleton() {
 // This card shows the thumbnail and links directly to Instagram/the app.
 function MobileInstagramCard({ post, index }: { post: InstagramPost; index: number }) {
   const [expanded, setExpanded] = useState(false)
+  const [thumbnail, setThumbnail] = useState<string | null>(post.thumbnail ?? null)
   const reel = isReel(post.url)
+
+  // Fetch thumbnail from Instagram oEmbed API (proxied server-side to avoid CORS)
+  useEffect(() => {
+    if (thumbnail) return
+    fetch(`/api/instagram-thumbnail?url=${encodeURIComponent(post.url)}`)
+      .then((r) => r.json())
+      .then((d) => { if (d.thumbnail) setThumbnail(d.thumbnail) })
+      .catch(() => {})
+  }, [post.url, thumbnail])
 
   return (
     <div
@@ -133,8 +143,8 @@ function MobileInstagramCard({ post, index }: { post: InstagramPost; index: numb
         rel="noopener noreferrer"
         className={`relative block w-full overflow-hidden ${reel ? 'aspect-[4/5]' : 'aspect-square'}`}
       >
-        {post.thumbnail ? (
-          <img src={post.thumbnail} alt="" className="w-full h-full object-cover" />
+        {thumbnail ? (
+          <img src={thumbnail} alt="" className="w-full h-full object-cover" />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-black/[0.04] to-black/[0.08] flex items-center justify-center">
             <InstagramIcon
