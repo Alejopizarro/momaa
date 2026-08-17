@@ -4,35 +4,8 @@ import { useTranslations, useLocale } from "next-intl";
 import { SectionLabel } from "@/components/atoms/SectionLabel";
 import { Icon } from "@/components/atoms/Icon";
 import { Button } from "@/components/atoms/Button";
-import { projects, type Project } from "@/data/projects";
-
-const FEATURED_IDS = [
-  "rehabilitacion-consistorial-marbella",
-  "the-deck-benahavis",
-  "casa-allure-marbella",
-  "las-joyas-estepona",
-  "cubierta-pabellon-carlos-cabezas",
-  "el-trapiche-casa-8",
-];
-
-const PLACEHOLDER_IMAGES = [
-  "/momaa-hero-1.jpg",
-  "/momaa-hero-2.jpg",
-  "/momaa-hero-3.jpg",
-  "/momaa-hero-4.jpg",
-  "/momaa-hero-5.jpg",
-  "/momaa-hero-6.jpg",
-];
-
-const featuredProjects = FEATURED_IDS.map((id) =>
-  projects.find((p) => p.id === id),
-).filter((p): p is Project => p !== undefined);
-
-function getImage(project: Project): string {
-  if (project.image) return project.image;
-  const idx = projects.indexOf(project);
-  return PLACEHOLDER_IMAGES[idx % PLACEHOLDER_IMAGES.length];
-}
+import { type Project } from "@/data/projects";
+import { featuredProjects, getFeaturedProjectImage } from "@/data/featured-projects";
 
 export function FeaturedProjects() {
   const t = useTranslations("projects");
@@ -107,7 +80,7 @@ function ProjectCard({
       style={{ height: "480px" }}
     >
       <Image
-        src={getImage(project)}
+        src={getFeaturedProjectImage(project)}
         alt={project.title}
         fill
         className="object-cover transition-transform duration-[800ms] group-hover:scale-[1.03]"

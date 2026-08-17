@@ -1,13 +1,12 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "../../../routing";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
-import { StatsBar } from "@/components/sections/StatsBar";
+import { FeaturedProjectsII } from "@/components/sections/FeaturedProjectsII";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { BlogSection } from "@/components/sections/BlogSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { InstagramGrid } from "@/components/sections/grid-instagram";
+import { ScrollReveal } from "@/components/atoms/ScrollReveal";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -42,33 +41,43 @@ const INSTAGRAM_POSTS_2 = [
 ];
 
 // En Next.js 14 params NO es una Promise — es un objeto síncrono
-export default async function HomePage({ params }: { params: { locale: Locale } }) {
+export default async function HomePage({
+  params,
+}: {
+  params: { locale: Locale };
+}) {
   const { locale } = params;
   setRequestLocale(locale);
-  const t = await getTranslations('instagram');
+  const t = await getTranslations("instagram");
 
   return (
     <>
-      <HeroSection />
-      <StatsBar />
-      <FeaturedProjects />
-      <InstagramGrid
-        posts={INSTAGRAM_POSTS_2}
-        columns={2}
-        sectionLabel={t('sectionLabel')}
-        title={t('followUs')}
-        followUrl="https://www.instagram.com/momaa_architects?utm_source=qr&igsh=aGF2cnNiNjZ3dDFw"
-      />
-      <ServicesSection />
-      <AboutSection />
-      <BlogSection />
-      <InstagramGrid
+      <FeaturedProjectsII />
+      <ScrollReveal>
+        <AboutSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ServicesSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <InstagramGrid
+          posts={INSTAGRAM_POSTS_2}
+          columns={2}
+          sectionLabel={t("sectionLabel")}
+          title={t("followUs")}
+          followUrl="https://www.instagram.com/momaa_architects?utm_source=qr&igsh=aGF2cnNiNjZ3dDFw"
+        />
+      </ScrollReveal>
+      <ScrollReveal>
+        <BlogSection />
+      </ScrollReveal>
+      {/* <InstagramGrid
         posts={INSTAGRAM_POSTS}
         columns={2}
-        sectionLabel={t('sectionLabel')}
-        title={t('latestProjects')}
+        sectionLabel={t("sectionLabel")}
+        title={t("latestProjects")}
         followUrl="https://www.instagram.com/momaa_architects?utm_source=qr&igsh=aGF2cnNiNjZ3dDFw"
-      />
+      /> */}
       {/* <ContactSection /> */}
     </>
   );

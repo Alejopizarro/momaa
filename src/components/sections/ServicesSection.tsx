@@ -13,7 +13,7 @@ export function ServicesSection() {
   const items: ServiceItem[] = t.raw("items") as ServiceItem[];
 
   return (
-    <section id="servicios" className="section-padding bg-surface">
+    <section id="servicios" className="section-padding">
       <div className="container-momaa ">
         {/* Header */}
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -30,11 +30,11 @@ export function ServicesSection() {
           </div>
 
           {/* Cards grid */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e0ddd9]">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {items.map((item) => (
               <div
                 key={item.title}
-                className="p-10 md:p-12 bg-white group border border-black/[0.08] hover:border-[#E8572A] hover:shadow-[0_4px_20px_rgba(232,87,42,0.08)] transition-all duration-500"
+                className="p-10 md:p-12 bg-surface border-t-[#E8572A] border-t-2  hover:border-[#E8572A] hover:shadow-[0_4px_20px_rgba(232,87,42,0.08)] transition-all duration-500"
               >
                 <Icon
                   name={item.icon}
