@@ -1,48 +1,48 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react'
-import Script from 'next/script'
-import { useTranslations } from 'next-intl'
-import { SectionLabel } from '@/components/atoms/SectionLabel'
+import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
+import { useTranslations } from "next-intl";
+import { SectionLabel } from "@/components/atoms/SectionLabel";
 
 export interface InstagramPost {
-  url: string
-  description: string
-  thumbnail?: string
+  url: string;
+  description: string;
+  thumbnail?: string;
 }
 
 interface InstagramGridProps {
-  posts: InstagramPost[]
+  posts: InstagramPost[];
   /** Number of columns to display. Defaults to the number of posts (max 4). */
-  columns?: 1 | 2 | 3 | 4
-  sectionLabel?: string
-  title?: string
-  followUrl?: string
+  columns?: 1 | 2 | 3 | 4;
+  sectionLabel?: string;
+  title?: string;
+  followUrl?: string;
 }
 
 function isReel(url: string): boolean {
-  return url.includes('/reel/')
+  return url.includes("/reel/");
 }
 
 function renderDescription(text: string) {
   return text.split(/(\s+)/).map((part, i) => {
-    if (part.trim().startsWith('#')) {
+    if (part.trim().startsWith("#")) {
       return (
         <span key={i} className="text-[#E8572A]">
           {part}
         </span>
-      )
+      );
     }
-    return <span key={i}>{part}</span>
-  })
+    return <span key={i}>{part}</span>;
+  });
 }
 
 const InstagramIcon = ({
   className,
   style,
 }: {
-  className?: string
-  style?: React.CSSProperties
+  className?: string;
+  style?: React.CSSProperties;
 }) => (
   <svg
     width="18"
@@ -52,11 +52,19 @@ const InstagramIcon = ({
     className={className}
     style={style}
   >
-    <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" />
+    <rect
+      x="2"
+      y="2"
+      width="20"
+      height="20"
+      rx="5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
     <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
     <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
   </svg>
-)
+);
 
 function CardSkeleton() {
   return (
@@ -82,31 +90,41 @@ function CardSkeleton() {
         <div className="skeleton-shimmer h-2 w-3/4" />
       </div>
     </div>
-  )
+  );
 }
 
 // ─── Mobile card (shown on < md) ──────────────────────────────────────────────
 // Instagram embeds don't support inline video playback on iOS mobile browsers.
 // This card shows the thumbnail and links directly to Instagram/the app.
-function MobileInstagramCard({ post, index }: { post: InstagramPost; index: number }) {
-  const [expanded, setExpanded] = useState(false)
-  const [thumbnail, setThumbnail] = useState<string | null>(post.thumbnail ?? null)
-  const reel = isReel(post.url)
+function MobileInstagramCard({
+  post,
+  index,
+}: {
+  post: InstagramPost;
+  index: number;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const [thumbnail, setThumbnail] = useState<string | null>(
+    post.thumbnail ?? null,
+  );
+  const reel = isReel(post.url);
 
   // Fetch thumbnail from Instagram oEmbed API (proxied server-side to avoid CORS)
   useEffect(() => {
-    if (thumbnail) return
+    if (thumbnail) return;
     fetch(`/api/instagram-thumbnail?url=${encodeURIComponent(post.url)}`)
       .then((r) => r.json())
-      .then((d) => { if (d.thumbnail) setThumbnail(d.thumbnail) })
-      .catch(() => {})
-  }, [post.url, thumbnail])
+      .then((d) => {
+        if (d.thumbnail) setThumbnail(d.thumbnail);
+      })
+      .catch(() => {});
+  }, [post.url, thumbnail]);
 
   return (
     <div
       className="flex flex-col bg-white animate-fadeInUp"
       style={{
-        border: '1px solid rgba(0,0,0,0.08)',
+        border: "1px solid rgba(0,0,0,0.08)",
         animationDelay: `${index * 90}ms`,
       }}
     >
@@ -122,17 +140,22 @@ function MobileInstagramCard({ post, index }: { post: InstagramPost; index: numb
           <span className="flex items-center gap-1.5 text-[8.5px] font-black uppercase tracking-[0.3em] text-black/25">
             {reel ? (
               <>
-                <svg width="8" height="9" viewBox="0 0 9 10" fill="currentColor">
+                <svg
+                  width="8"
+                  height="9"
+                  viewBox="0 0 9 10"
+                  fill="currentColor"
+                >
                   <polygon points="0,0 9,5 0,10" />
                 </svg>
                 Reel
               </>
             ) : (
-              'Post'
+              "Post"
             )}
           </span>
           <span className="text-[8px] font-black text-black/15 tabular-nums">
-            {String(index + 1).padStart(2, '0')}
+            {String(index + 1).padStart(2, "0")}
           </span>
         </div>
       </div>
@@ -142,7 +165,7 @@ function MobileInstagramCard({ post, index }: { post: InstagramPost; index: numb
         href={post.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`relative block w-full overflow-hidden ${reel ? 'aspect-[4/5]' : 'aspect-square'}`}
+        className={`relative block w-full overflow-hidden ${reel ? "aspect-[4/5]" : "aspect-square"}`}
       >
         {thumbnail ? (
           <img src={thumbnail} alt="" className="w-full h-full object-cover" />
@@ -198,10 +221,10 @@ function MobileInstagramCard({ post, index }: { post: InstagramPost; index: numb
           style={
             !expanded
               ? {
-                  display: '-webkit-box',
+                  display: "-webkit-box",
                   WebkitLineClamp: 1,
-                  WebkitBoxOrient: 'vertical',
-                  overflow: 'hidden',
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
                 }
               : {}
           }
@@ -211,15 +234,19 @@ function MobileInstagramCard({ post, index }: { post: InstagramPost; index: numb
         <button
           onClick={() => setExpanded((v) => !v)}
           className="mt-2.5 inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-black/30 hover:text-[#E8572A] transition-colors duration-200 cursor-pointer"
-          aria-label={expanded ? 'Ocultar descripción completa' : 'Ver descripción completa'}
+          aria-label={
+            expanded
+              ? "Ocultar descripción completa"
+              : "Ver descripción completa"
+          }
         >
-          {expanded ? 'Ver menos' : 'Ver más'}
+          {expanded ? "Ver menos" : "Ver más"}
           <svg
             width="8"
             height="8"
             viewBox="0 0 9 9"
             fill="none"
-            className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
+            className={`transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
           >
             <path
               d="M1.5 3.5l3 3 3-3"
@@ -231,64 +258,72 @@ function MobileInstagramCard({ post, index }: { post: InstagramPost; index: numb
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 // ─── Desktop card (shown on >= md) ────────────────────────────────────────────
-function InstagramCard({ post, index }: { post: InstagramPost; index: number }) {
-  const [visible, setVisible] = useState(false)
-  const [embedReady, setEmbedReady] = useState(false)
-  const [expanded, setExpanded] = useState(false)
-  const cardRef = useRef<HTMLDivElement>(null)
-  const embedWrapRef = useRef<HTMLDivElement>(null)
-  const reel = isReel(post.url)
+function InstagramCard({
+  post,
+  index,
+}: {
+  post: InstagramPost;
+  index: number;
+}) {
+  const [visible, setVisible] = useState(false);
+  const [embedReady, setEmbedReady] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const embedWrapRef = useRef<HTMLDivElement>(null);
+  const reel = isReel(post.url);
 
   // Mount embed lazily when card approaches viewport
   useEffect(() => {
-    const el = cardRef.current
-    if (!el) return
+    const el = cardRef.current;
+    if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true)
-          observer.disconnect()
+          setVisible(true);
+          observer.disconnect();
         }
       },
-      { rootMargin: '200px', threshold: 0 },
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
+      { rootMargin: "200px", threshold: 0 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Ask embed.js to process any new blockquotes
   useEffect(() => {
-    if (!visible) return
-    const win = window as typeof window & { instgrm?: { Embeds: { process(): void } } }
-    win.instgrm?.Embeds.process()
-  }, [visible])
+    if (!visible) return;
+    const win = window as typeof window & {
+      instgrm?: { Embeds: { process(): void } };
+    };
+    win.instgrm?.Embeds.process();
+  }, [visible]);
 
   // Watch for embed.js to replace blockquote with iframe → crossfade skeleton out
   useEffect(() => {
-    const wrap = embedWrapRef.current
-    if (!wrap || !visible) return
+    const wrap = embedWrapRef.current;
+    if (!wrap || !visible) return;
     const mo = new MutationObserver(() => {
-      if (wrap.querySelector('iframe')) {
-        setEmbedReady(true)
-        mo.disconnect()
+      if (wrap.querySelector("iframe")) {
+        setEmbedReady(true);
+        mo.disconnect();
       }
-    })
-    mo.observe(wrap, { childList: true, subtree: true })
-    return () => mo.disconnect()
-  }, [visible])
+    });
+    mo.observe(wrap, { childList: true, subtree: true });
+    return () => mo.disconnect();
+  }, [visible]);
 
   return (
     <div
       ref={cardRef}
       className={`group relative flex flex-col bg-white overflow-hidden transition-[border-color,box-shadow] duration-500 hover:shadow-[0_12px_48px_rgba(232,87,42,0.10)] ${
-        visible ? 'animate-fadeInUp' : 'opacity-0'
+        visible ? "animate-fadeInUp" : "opacity-0"
       }`}
       style={{
-        border: '1px solid rgba(0,0,0,0.08)',
+        border: "1px solid rgba(0,0,0,0.08)",
         ...(visible ? { animationDelay: `${index * 90}ms` } : {}),
       }}
     >
@@ -307,17 +342,22 @@ function InstagramCard({ post, index }: { post: InstagramPost; index: number }) 
           <span className="flex items-center gap-1.5 text-[8.5px] font-black uppercase tracking-[0.3em] text-black/25">
             {reel ? (
               <>
-                <svg width="8" height="9" viewBox="0 0 9 10" fill="currentColor">
+                <svg
+                  width="8"
+                  height="9"
+                  viewBox="0 0 9 10"
+                  fill="currentColor"
+                >
                   <polygon points="0,0 9,5 0,10" />
                 </svg>
                 Reel
               </>
             ) : (
-              'Post'
+              "Post"
             )}
           </span>
           <span className="text-[8px] font-black text-black/15 tabular-nums">
-            {String(index + 1).padStart(2, '0')}
+            {String(index + 1).padStart(2, "0")}
           </span>
         </div>
       </div>
@@ -331,7 +371,7 @@ function InstagramCard({ post, index }: { post: InstagramPost; index: number }) 
         {/* Skeleton: absolute overlay on top while embed loads, fades out when ready */}
         <div
           className={`absolute inset-0 z-10 transition-opacity duration-700 ${
-            embedReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            embedReady ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
         >
           <CardSkeleton />
@@ -345,16 +385,16 @@ function InstagramCard({ post, index }: { post: InstagramPost; index: number }) 
               data-instgrm-permalink={post.url}
               data-instgrm-version="14"
               style={{
-                background: '#fff',
-                border: '0',
-                borderRadius: '0',
-                boxShadow: 'none',
-                display: 'block',
-                margin: '0 auto',
-                maxWidth: '100%',
-                minWidth: '100%',
-                padding: '0',
-                width: '99%',
+                background: "#fff",
+                border: "0",
+                borderRadius: "0",
+                boxShadow: "none",
+                display: "block",
+                margin: "0 auto",
+                maxWidth: "100%",
+                minWidth: "100%",
+                padding: "0",
+                width: "99%",
               }}
             />
           )}
@@ -368,10 +408,10 @@ function InstagramCard({ post, index }: { post: InstagramPost; index: number }) 
           style={
             !expanded
               ? {
-                  display: '-webkit-box',
+                  display: "-webkit-box",
                   WebkitLineClamp: 1,
-                  WebkitBoxOrient: 'vertical',
-                  overflow: 'hidden',
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
                 }
               : {}
           }
@@ -381,15 +421,19 @@ function InstagramCard({ post, index }: { post: InstagramPost; index: number }) 
         <button
           onClick={() => setExpanded((v) => !v)}
           className="mt-2.5 inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-black/30 hover:text-[#E8572A] transition-colors duration-200 cursor-pointer"
-          aria-label={expanded ? 'Ocultar descripción completa' : 'Ver descripción completa'}
+          aria-label={
+            expanded
+              ? "Ocultar descripción completa"
+              : "Ver descripción completa"
+          }
         >
-          {expanded ? 'Ver menos' : 'Ver más'}
+          {expanded ? "Ver menos" : "Ver más"}
           <svg
             width="8"
             height="8"
             viewBox="0 0 9 9"
             fill="none"
-            className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
+            className={`transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
           >
             <path
               d="M1.5 3.5l3 3 3-3"
@@ -401,38 +445,40 @@ function InstagramCard({ post, index }: { post: InstagramPost; index: number }) 
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 const gridColClasses: Record<1 | 2 | 3 | 4, string> = {
-  1: 'grid-cols-1 max-w-lg mx-auto',
-  2: 'grid-cols-1 md:grid-cols-2',
-  3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-  4: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
-}
+  1: "grid-cols-1 max-w-lg mx-auto",
+  2: "grid-cols-1 md:grid-cols-2",
+  3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+  4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4",
+};
 
 export function InstagramGrid({
   posts,
   columns,
-  sectionLabel = 'Instagram',
-  title = 'Síguenos en Instagram',
+  sectionLabel = "Instagram",
+  title = "Síguenos en Instagram",
   followUrl,
 }: InstagramGridProps) {
-  const t = useTranslations('instagram')
-  const cols = ((columns ?? Math.min(posts.length, 4)) as 1 | 2 | 3 | 4)
+  const t = useTranslations("instagram");
+  const cols = (columns ?? Math.min(posts.length, 4)) as 1 | 2 | 3 | 4;
 
   return (
-    <section className="section-padding bg-white">
+    <section className="px-6 py-8 md:py-16 lg:py-24">
       <Script
         src="//www.instagram.com/embed.js"
         strategy="afterInteractive"
         onLoad={() => {
-          const win = window as typeof window & { instgrm?: { Embeds: { process(): void } } }
-          win.instgrm?.Embeds.process()
+          const win = window as typeof window & {
+            instgrm?: { Embeds: { process(): void } };
+          };
+          win.instgrm?.Embeds.process();
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14 md:mb-20">
           <div>
@@ -446,7 +492,7 @@ export function InstagramGrid({
               rel="noopener noreferrer"
               className="group/link inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-black/40 hover:text-[#E8572A] transition-colors duration-200 shrink-0"
             >
-              {t('followLink')}
+              {t("followLink")}
               <svg
                 width="14"
                 height="14"
@@ -482,5 +528,5 @@ export function InstagramGrid({
         </div>
       </div>
     </section>
-  )
+  );
 }

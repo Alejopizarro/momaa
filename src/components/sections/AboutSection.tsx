@@ -16,9 +16,9 @@ export function AboutSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="sobre-nosotros" className="section-padding bg-white">
-      <div className="container-momaa">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center px-6 md:px-12">
+    <section id="sobre-nosotros" className="px-6 py-8 md:py-16 lg:py-24">
+      <div className="">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image */}
           <div className="relative order-2 lg:order-1">
             <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>

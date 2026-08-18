@@ -13,10 +13,21 @@ export interface Project {
   year: string;
   url: string;
   image?: string;
+  description?: string;
+  descriptionEn?: string;
 }
 
 export function getTitle(project: Project, locale: string): string {
   return locale === "en" && project.titleEn ? project.titleEn : project.title;
+}
+
+export function getDescription(
+  project: Project,
+  locale: string
+): string | undefined {
+  return locale === "en" && project.descriptionEn
+    ? project.descriptionEn
+    : project.description;
 }
 
 export const projects: Project[] = [
@@ -26,6 +37,10 @@ export const projects: Project[] = [
     titleEn: "Marbella City Hall Rehabilitation",
     category: "Espacio Público",
     year: "2026",
+    description:
+      "Rehabilitación integral del Ayuntamiento de Marbella: un edificio histórico renovado para ser más accesible, sostenible y eficiente al servicio de los ciudadanos.",
+    descriptionEn:
+      "A full rehabilitation of Marbella's City Hall: a historic building renovated to be more accessible, sustainable and efficient in serving its citizens.",
     url: "https://momaa.es/rehabilitacion-edfificio-consistorial-exmo-ayuntamiento-de-marbella/",
     image: "/ayuntamiento-marbella.jpg",
   },
@@ -43,6 +58,10 @@ export const projects: Project[] = [
     titleEn: '"The Deck" Programmatic Building, Benahavís',
     category: "Urbanismo",
     year: "2025",
+    description:
+      '"The Deck", Benahavís: edificio de restauración y coworking con arquitectura estratificada, cubierta-mirador hacia la montaña y un volumen que convierte una parcela triangular en una solución eficiente e integrada.',
+    descriptionEn:
+      '"The Deck", Benahavís: a restaurant and coworking building with layered architecture, a mountain-facing viewpoint roof, and a volume that turns a triangular plot into an efficient, integrated solution.',
     url: "https://momaa.es/edificio-programatico-the-deck-benahavis/",
     image: "/the-deck.jpeg",
   },
@@ -58,6 +77,10 @@ export const projects: Project[] = [
     id: "casa-allure-marbella",
     title: "Casa Allure, Marbella",
     category: "Residencial",
+    description:
+      "Casa Allure, en Cascada de Camoján: una villa de alta gama en Marbella donde calidad, funcionalidad y elegancia se combinan, desarrollada por un equipo multidisciplinar liderado por Andrés M. Mateo.",
+    descriptionEn:
+      "Casa Allure, in Cascada de Camoján: a high-end villa in Marbella where quality, functionality and elegance come together, developed by a multidisciplinary team led by Andrés M. Mateo.",
     year: "2025",
     url: "https://momaa.es/casa-allure_marbella/",
     image: "/casa-allure-marbella.jpg",
@@ -67,6 +90,10 @@ export const projects: Project[] = [
     title: "Cubierta Pista Deportiva Pabellón Carlos Cabezas, Marbella",
     titleEn: "Sports Court Roof, Carlos Cabezas Pavilion, Marbella",
     category: "Espacio Público",
+    description:
+      "Cubierta del Pabellón Carlos Cabezas, Marbella: una nueva techumbre de 1.222 m² para la pista deportiva exterior, que permite su uso confortable durante todo el año sin depender del clima.",
+    descriptionEn:
+      "Carlos Cabezas Pavilion Roof, Marbella: a new 1,222 m² canopy for the outdoor sports court, allowing comfortable year-round use regardless of the weather.",
     year: "2024",
     url: "https://momaa.es/cubierta-pista-deportiva-pabellon-carlos-cabeza-marbella/",
     image: "/pabellon-carlos-cabezas.jpg",
@@ -76,6 +103,10 @@ export const projects: Project[] = [
     title: "El Trapiche, Casa 8, Marbella",
     titleEn: "El Trapiche, House 8, Marbella",
     category: "Residencial",
+    description:
+      "Casa 8, El Trapiche: vivienda en parcela esquinera con vistas al mar, la montaña y la histórica fábrica de azúcar, organizada entre dormitorios en planta alta y un salón-porche junto a la piscina.",
+    descriptionEn:
+      "House 8, El Trapiche: a home on a corner plot with views of the sea, the mountains and the historic sugar factory, organised with bedrooms upstairs and a living room-porch by the pool.",
     year: "2023",
     url: "https://momaa.es/el-trapiche_casa-8_marbella/",
     image: "/trapiche.jpeg",
@@ -111,6 +142,10 @@ export const projects: Project[] = [
     title: '68 Viviendas "Las Joyas", Estepona',
     titleEn: '68 Homes "Las Joyas", Estepona',
     category: "Residencial",
+    description:
+      "68 viviendas de diseño contemporáneo en La Resina Golf, con volumetría de líneas limpias, baja densidad y amplias terrazas integradas al paisaje de la Costa del Sol.",
+    descriptionEn:
+      "68 contemporary-design homes at La Resina Golf, with clean-lined volumes, low density and wide terraces integrated into the Costa del Sol landscape.",
     year: "2022",
     url: "https://momaa.es/68-viviendas-en-estepona/",
     image: "/lasjoyas-estepona.jpg",

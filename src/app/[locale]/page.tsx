@@ -78,7 +78,9 @@ export default async function HomePage({
         title={t("latestProjects")}
         followUrl="https://www.instagram.com/momaa_architects?utm_source=qr&igsh=aGF2cnNiNjZ3dDFw"
       /> */}
-      {/* <ContactSection /> */}
+      <ScrollReveal>
+        <ContactSection />
+      </ScrollReveal>
     </>
   );
 }

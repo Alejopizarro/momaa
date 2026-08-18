@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { Icon } from "@/components/atoms/Icon";
 import { Button } from "@/components/atoms/Button";
-import { type Project } from "@/data/projects";
+import { type Project, getDescription } from "@/data/projects";
 import {
   featuredProjects,
   getFeaturedProjectImage,
@@ -21,13 +21,18 @@ export function FeaturedProjectsII() {
   const t = useTranslations("projects");
   const locale = useLocale();
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [activeMobileId, setActiveMobileId] = useState<string | null>(null);
 
   return (
-    <section id="proyectos" className="bg-white pb-24 md:pb-32">
+    <section id="proyectos" className="bg-white pb-8 md:pb-16">
+      <h2 className="font-display text-4xl uppercase text-[#111111] text-left md:text-center max-w-[1800px] mx-auto px-6 md:px-12 pt-24">
+        {t("sectionTitle")}
+      </h2>
+
       {/* Desktop: every card gets the same subtle scroll-in scale, size stays
           uniform otherwise — the image only grows and reveals detail on hover.
           Hovering one row dims the others so it reads as the spotlighted one. */}
-      <div className="hidden md:flex md:flex-col gap-2 max-w-[1800px] mx-auto px-6 md:px-12 pt-24">
+      <div className="hidden md:flex md:flex-col gap-2 max-w-[1800px] mx-auto px-6 md:px-12">
         {featuredProjects.map((project, index) => (
           <ProjectRow
             key={project.id}
@@ -41,14 +46,21 @@ export function FeaturedProjectsII() {
           />
         ))}
         <div className="flex justify-center pt-10">
-          <Button as="link" href={`/${locale}/projects`} variant="outline" size="md">
+          <Button
+            as="link"
+            href={`/${locale}/projects`}
+            variant="outline"
+            size="md"
+          >
             {t("viewAll")}
           </Button>
         </div>
       </div>
 
-      {/* Mobile: stacked cards, simple fade-in on scroll into view */}
-      <div className="flex flex-col gap-[3px] md:hidden px-6 pt-24">
+      {/* Mobile: same structure as desktop rows, stacked vertically and
+          left-aligned. No scale/hover — the description fades in and out
+          as the card enters/leaves the viewport. */}
+      <div className="flex flex-col divide-y divide-black/10 md:hidden px-6 pt-12">
         {featuredProjects.map((project, index) => (
           <MobileProjectCard
             key={project.id}
@@ -56,10 +68,22 @@ export function FeaturedProjectsII() {
             locale={locale}
             viewLabel={t("viewProject")}
             priority={index === 0}
+            isActive={activeMobileId === project.id}
+            onActivate={() => setActiveMobileId(project.id)}
+            onDeactivate={() =>
+              setActiveMobileId((current) =>
+                current === project.id ? null : current,
+              )
+            }
           />
         ))}
         <div className="flex justify-center pt-10">
-          <Button as="link" href={`/${locale}/projects`} variant="outline" size="md">
+          <Button
+            as="link"
+            href={`/${locale}/projects`}
+            variant="outline"
+            size="md"
+          >
             {t("viewAll")}
           </Button>
         </div>
@@ -128,7 +152,7 @@ function ProjectRow({
           {/* Right: description + CTA, revealed on hover */}
           <div className="w-64 lg:w-72 flex-shrink-0 opacity-0 -translate-x-3 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-x-0">
             <p className="text-black/60 text-sm leading-relaxed mb-6">
-              {PLACEHOLDER_DESCRIPTION}
+              {getDescription(project, locale) ?? PLACEHOLDER_DESCRIPTION}
             </p>
             <span className="flex items-center gap-2 text-[#E8572A] text-[10px] font-black uppercase tracking-widest w-fit">
               {viewLabel}
@@ -146,49 +170,70 @@ function MobileProjectCard({
   locale,
   viewLabel,
   priority,
+  isActive,
+  onActivate,
+  onDeactivate,
 }: {
   project: Project;
   locale: string;
   viewLabel: string;
   priority: boolean;
+  isActive: boolean;
+  onActivate: () => void;
+  onDeactivate: () => void;
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10% 0px" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: false, margin: "-40% 0px -40% 0px" }}
+      onViewportEnter={onActivate}
+      onViewportLeave={onDeactivate}
     >
       <Link
         href={`/${locale}/projects/${project.id}`}
-        className="relative block w-full overflow-hidden aspect-[4/5]"
+        className="block w-full py-8 text-left"
       >
-        <Image
-          src={getFeaturedProjectImage(project)}
-          alt={project.title}
-          fill
-          className="object-cover"
-          sizes="100vw"
-          quality={90}
-          priority={priority}
-        />
-        <div className="absolute inset-0 card-overlay" />
-
-        <div className="absolute inset-0 p-6 flex flex-col justify-end">
-          <span className="inline-block px-3 py-1 mb-3 text-[10px] font-black uppercase tracking-widest bg-[#E8572A] text-white w-fit">
-            {project.category}
-          </span>
-          <h3 className="font-display text-2xl text-white mb-1 uppercase">
+        {/* Category/year + title, left-aligned, always visible */}
+        <div className="mb-4">
+          <p className="text-black/40 text-[10px] uppercase tracking-[0.25em] mb-2">
+            {project.category} — {project.year}
+          </p>
+          <h3 className="font-display text-xl text-[#111111] uppercase">
             {project.title}
           </h3>
-          <p className="text-white/40 text-[10px] uppercase tracking-[0.25em] mb-4">
-            {project.year}
-          </p>
-          <span className="flex items-center gap-2 text-[#E8572A] text-[10px] font-black uppercase tracking-widest">
-            {viewLabel}
-            <Icon name="arrow_right_alt" size="sm" />
-          </span>
         </div>
+
+        {/* Image — static, no scale/hover effect */}
+        <div className="relative w-full aspect-[3/2] overflow-hidden">
+          <Image
+            src={getFeaturedProjectImage(project)}
+            alt={project.title}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            quality={90}
+            priority={priority}
+          />
+        </div>
+
+        {/* Description + CTA — closed (collapsed) by default, opens when
+            this card becomes the active one, which closes whichever card
+            was open before it */}
+        <motion.div
+          initial={false}
+          animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="overflow-hidden"
+        >
+          <div className="pt-6">
+            <p className="text-black/60 text-sm leading-relaxed mb-6">
+              {getDescription(project, locale) ?? PLACEHOLDER_DESCRIPTION}
+            </p>
+            <span className="flex items-center gap-2 text-[#E8572A] text-[10px] font-black uppercase tracking-widest w-fit">
+              {viewLabel}
+              <Icon name="arrow_right_alt" size="sm" />
+            </span>
+          </div>
+        </motion.div>
       </Link>
     </motion.div>
   );
