@@ -50,6 +50,10 @@ export const projects: Project[] = [
     titleEn: "Multi-Use Centre at the Ermita del Calvario",
     category: "Espacio Público",
     year: "2026",
+    description:
+      "Nuevo centro de usos múltiples junto a la Ermita del Calvario: cubiertas plegadas y lucernarios que aprovechan la luz natural en una estructura ligera y contemporánea, integrada de forma sostenible en el entorno histórico y la arboleda.",
+    descriptionEn:
+      "A new multipurpose centre next to the Ermita del Calvario: folded roofs and skylights that take advantage of natural light in a light, contemporary structure, sustainably integrated into the historic surroundings and the trees.",
     url: "https://momaa.es/reforma-del-centro-de-tecnificacion-de-gimnasia-ritmica-en-marbella-2/",
   },
   {
@@ -71,6 +75,10 @@ export const projects: Project[] = [
     titleEn: "San Pedro de Alcántara Municipal Library",
     category: "Espacio Público",
     year: "2025",
+    description:
+      "Nueva Biblioteca de San Pedro de Alcántara: un espacio cultural de diseño innovador y sostenible, pensado como punto de encuentro y referente cultural para la comunidad.",
+    descriptionEn:
+      "The new San Pedro de Alcántara Library: an innovative, sustainable cultural space conceived as a community hub and cultural landmark for the area.",
     url: "https://momaa.es/2025-el-estudio-de-arquitectura-momaa-celebra-la-ejecucion-de-su-proyecto-para-la-biblioteca-de-san-pedro-de-alcantara/",
   },
   {
@@ -135,6 +143,10 @@ export const projects: Project[] = [
     titleEn: "Creating City — Urban Intervention Al Ándalus Park",
     category: "Urbanismo",
     year: "2023",
+    description:
+      "Intervención urbana junto al Colegio Público Al-Ándalus en San Pedro Alcántara: una pequeña cirugía urbana sobre una jardinera arbórea que crea una nueva zona verde de uso compartido para el alumnado y los vecinos.",
+    descriptionEn:
+      "An urban intervention next to the Al-Ándalus Public School in San Pedro Alcántara: a small urban 'surgical' operation on a tree-lined planter, creating a new green area shared by students and local residents.",
     url: "https://momaa.es/20230921-creando-ciudad-intervencion-urbana-parque-al-andalus/",
   },
   {
@@ -164,6 +176,10 @@ export const projects: Project[] = [
     title: "Two Houses in Fuengirola",
     category: "Residencial",
     year: "2022",
+    description:
+      "Dos viviendas independientes en una misma parcela de Fuengirola, orientadas paralelas a la costa para maximizar la luz y las vistas, con plantas bajas diáfanas para la convivencia y plantas altas privadas para los dormitorios.",
+    descriptionEn:
+      "Two independent houses on a single plot in Fuengirola, oriented parallel to the coastline to maximise light and views, with open-plan ground floors for shared living and private upper floors for the bedrooms.",
     url: "https://momaa.es/two-houses-in-fuengirola/",
   },
   {
@@ -199,6 +215,10 @@ export const projects: Project[] = [
     titleEn: "Underground Car Park at Medical Centre, Ojén",
     category: "Urbanismo",
     year: "2021",
+    description:
+      "Aparcamiento bajo rasante junto al consultorio médico de Ojén: una propuesta ganadora de SiteSur y Urinci con la dirección arquitectónica de MoMaA, que responde al déficit de aparcamientos del casco urbano y mejora la accesibilidad de vecinos y visitantes.",
+    descriptionEn:
+      "An underground car park next to the Ojén medical centre: a winning proposal by SiteSur and Urinci with architectural direction by MoMaA, addressing the town centre's parking shortage and improving accessibility for residents and visitors.",
     url: "https://momaa.es/aparcamiento-sub-terraneo-junto-al-centro-medico-ojen/",
   },
   {
@@ -207,6 +227,10 @@ export const projects: Project[] = [
     titleEn: "Casa Torreón, Extension and Renovation, Marbella",
     category: "Residencial",
     year: "2021",
+    description:
+      "Ampliación y rehabilitación de vivienda unifamiliar en Marbella: un nuevo volumen anexo con dormitorio, sala de juegos y solárium, más una mejora integral de la envolvente térmica que sitúa la vivienda en los estándares del Passive House.",
+    descriptionEn:
+      "Extension and renovation of a single-family home in Marbella: a new annex volume with a bedroom, playroom and solarium, plus a full upgrade of the thermal envelope bringing the home up to Passive House standards.",
     url: "https://momaa.es/casa-torreon-ampliacion-y-rehabilitacion-de-vivienda-unifamiliar-marbella/",
   },
   {
@@ -215,6 +239,10 @@ export const projects: Project[] = [
     titleEn: "Dance and Music School, San Pedro de Alcántara",
     category: "Espacio Público",
     year: "2021",
+    description:
+      "Concurso para la Escuela de Danza y Música en el barrio del Ingenio, San Pedro Alcántara: un volumen de una sola planta y escala humana, con fachada continua inspirada en una partitura, que dialoga con el pasado industrial y activa el desarrollo urbano de la zona.",
+    descriptionEn:
+      "Competition entry for the Dance and Music School in the Ingenio neighbourhood, San Pedro Alcántara: a single-storey, human-scale volume with a continuous façade inspired by a musical score, dialoguing with the area's industrial past and helping activate its urban development.",
     url: "https://momaa.es/escuela-de-danza-y-musica-san-pedro-de-alcantara-marbella/",
   },
   {
@@ -223,6 +251,10 @@ export const projects: Project[] = [
     titleEn: "Casa Tres Patios, Party Wall House, Marbella",
     category: "Residencial",
     year: "2021",
+    description:
+      "Vivienda entre medianeras en el casco histórico de Marbella: una arquitectura vernácula de estilo andaluz, con materiales tradicionales, que se mimetiza con la trama urbana sin renunciar a la calidad espacial y programática de un diseño contemporáneo.",
+    descriptionEn:
+      "A party-wall house in Marbella's historic centre: vernacular, Andalusian-style architecture in traditional materials that blends into the urban fabric without giving up the spatial and programmatic quality of a contemporary design.",
     url: "https://momaa.es/casa-tres-patios-vivienda-entre-medianeras-marbella/",
   },
   {
@@ -231,6 +263,10 @@ export const projects: Project[] = [
     titleEn: "Architectural Barriers Removal, San Pedro Alcántara",
     category: "Espacio Público",
     year: "2021",
+    description:
+      "Plan de regeneración urbana en San Pedro Alcántara para mejorar la accesibilidad y eliminar barreras arquitectónicas: adaptación de pasos de peatones, reparación de pavimentos, alcorques y mobiliario urbano afectado por raíces de árboles.",
+    descriptionEn:
+      "An urban regeneration plan in San Pedro Alcántara to improve accessibility and remove architectural barriers: adapting pedestrian crossings and repairing paving, tree pits and street furniture affected by tree roots.",
     url: "https://momaa.es/eliminacion-de-barreras-arquitectonicas-san-pedro-alcantara-marbella/",
   },
   {
@@ -239,6 +275,10 @@ export const projects: Project[] = [
     titleEn: "Timber Walkway Marbella, Málaga",
     category: "Urbanismo",
     year: "2021",
+    description:
+      "Pasarela provisional de materialidad efímera en un tramo del río Guadaiza en Marbella, pensada para proteger el cauce y su ecosistema sin renunciar al paso de los vecinos por un camino muy transitado.",
+    descriptionEn:
+      "A temporary footbridge in lightweight, reversible materials along a stretch of the Guadaiza River in Marbella, designed to protect the riverbank and its ecosystem while preserving pedestrian access along a well-used path.",
     url: "https://momaa.es/pasarela-madera-marbella-malaga/",
   },
   {
@@ -255,6 +295,10 @@ export const projects: Project[] = [
     title: "British Internacional School of Marbella",
     category: "Educacional",
     year: "2020",
+    description:
+      "Edificio de tipología claustral para el British International School of Marbella, organizado en torno a dos patios y un ágora central, con ladrillo visto, hormigón y muro cortina, y una calificación energética clase A.",
+    descriptionEn:
+      "A cloister-type building for the British International School of Marbella, organised around two courtyards and a central auditorium, built with exposed brick, concrete and a curtain wall, achieving an energy class A rating.",
     url: "https://momaa.es/british-internacional-school-of-marbella/",
   },
   {
@@ -263,6 +307,10 @@ export const projects: Project[] = [
     titleEn: "Display Unit at British School Marbella",
     category: "Interiorismo",
     year: "2020",
+    description:
+      "Diseño de una librería expositora a medida para el British School Marbella, un mueble pensado para exponer libros y materiales del centro con un diseño funcional e integrado en el espacio.",
+    descriptionEn:
+      "Design of a bespoke display bookcase for British School Marbella, a piece of furniture conceived to showcase books and school materials with a functional design integrated into the space.",
     url: "https://momaa.es/diseno-libreria/",
   },
   {
@@ -271,6 +319,10 @@ export const projects: Project[] = [
     titleEn: "BISM Reception Counter Design",
     category: "Interiorismo",
     year: "2020",
+    description:
+      "Mostrador flexible en forma de U para el BISM, realizado en madera de roble y encimera de Corian, que atiende de forma optimizada tanto a usuarios como a padres con un diseño cálido y minimalista.",
+    descriptionEn:
+      "A flexible U-shaped counter for BISM, made of oak wood with a Corian countertop, serving both users and parents with an optimised layout and a warm, minimalist design.",
     url: "https://momaa.es/diseno-mostrador-colegio/",
   },
   {
@@ -279,6 +331,10 @@ export const projects: Project[] = [
     titleEn: "Public Building Renovation, Marbella, Málaga",
     category: "Espacio Público",
     year: "2020",
+    description:
+      "Rehabilitación de un edificio protegido de 1965 en el casco histórico de Marbella, en estado de semi-abandono, para convertirlo en oficinas municipales accesibles sin perder el espíritu paisajístico del entorno.",
+    descriptionEn:
+      "Rehabilitation of a listed 1965 building in Marbella's old town, in a semi-abandoned state, converting it into accessible municipal offices while preserving the historic character of the surroundings.",
     url: "https://momaa.es/rehabilitacion-edificio-publico-marbella-malaga/",
   },
   {
@@ -287,6 +343,10 @@ export const projects: Project[] = [
     titleEn: "Urban Regeneration of Public Space, Marbella",
     category: "Urbanismo",
     year: "2020",
+    description:
+      "Plan de renovación urbana del barrio de San Pedro Alcántara bajo el principio de \"ciudad amable\": trazados continuos, eliminación de barreras arquitectónicas, nuevos puntos de encuentro comunitarios e iluminación pensada como experiencia espacial.",
+    descriptionEn:
+      "An urban renewal plan for the San Pedro Alcántara neighbourhood under the \"friendly city\" principle: continuous pathways, removal of architectural barriers, new community gathering spaces and lighting conceived as spatial experience.",
     url: "https://momaa.es/regeneracion-urbana-de-espacio-publico-marbella/",
   },
   {
@@ -304,6 +364,10 @@ export const projects: Project[] = [
     titleEn: "Open Classroom for EIC School",
     category: "Educacional",
     year: "2020",
+    description:
+      "Proyecto experimental de aula abierta para el colegio EIC, pensado para humanizar las aulas e incentivar la creatividad de los niños.",
+    descriptionEn:
+      "An experimental open classroom project for EIC School, designed to humanize learning spaces and foster children's creativity.",
     url: "https://momaa.es/aula-abierta-para-colegio-eic/",
   },
   {
@@ -312,6 +376,10 @@ export const projects: Project[] = [
     titleEn: "San Pedro Alcántara Tourism Office",
     category: "Espacio Público",
     year: "2019",
+    description:
+      "Rehabilitación del centro de Turismo, Comercio y Fiestas de San Pedro Alcántara: un espacio accesible y contemporáneo con sala de exposición, oficinas para el equipo municipal y una sala de prensa junto a un patio de luz natural.",
+    descriptionEn:
+      "Rehabilitation of the Tourism, Commerce and Festivities Centre in San Pedro Alcántara: an accessible, contemporary space with an exhibition hall, offices for the municipal team, and a press room by a naturally lit courtyard.",
     url: "https://momaa.es/oficina-turismo/",
   },
   {
@@ -320,6 +388,10 @@ export const projects: Project[] = [
     titleEn: "Eco Car Park at Guadalmina, Marbella",
     category: "Urbanismo",
     year: "2019",
+    description:
+      "Aparcamiento ecológico, tecnológico y accesible en Guadalmina, Marbella: una nueva fachada urbana que recupera un espacio degradado detrás de una zona comercial, integrada con el entorno verde predominante del barrio.",
+    descriptionEn:
+      "An eco-friendly, high-tech and accessible car park in Guadalmina, Marbella: a new urban façade that reclaims a degraded space behind a commercial area, integrated with the neighbourhood's predominant green surroundings.",
     url: "https://momaa.es/aparcamiento-guadalmina/",
   },
   {
@@ -343,6 +415,10 @@ export const projects: Project[] = [
     titleEn: "Boqué Maison Lu Office, Marbella",
     category: "Espacio Público",
     year: "2019",
+    description:
+      "Rehabilitación de un antiguo bar abandonado junto al restaurante Maison Lu para convertirlo en las oficinas corporativas del grupo Boqué: un espacio de una sola planta pensado en torno a la luz natural y la comodidad.",
+    descriptionEn:
+      "Rehabilitation of an old, abandoned bar next to the Maison Lu restaurant into the Boqué group's corporate offices: a single-storey space designed around natural light and comfort.",
     url: "https://momaa.es/oficina-bouque/",
   },
   {
@@ -359,6 +435,10 @@ export const projects: Project[] = [
     title: "Loft Design, Marbella",
     category: "Residencial",
     year: "2019",
+    description:
+      "Reconversión de una terraza apergolada sobre un edificio de oficinas en Marbella en un loft multifuncional con vistas al mar, mediante una envolvente transparente que aprovecha la luz natural.",
+    descriptionEn:
+      "Conversion of a pergola-covered terrace above an office building in Marbella into a multifunctional loft with sea views, using a transparent envelope that makes the most of natural light.",
     url: "https://momaa.es/loft-design-marbella/",
   },
   {
@@ -382,6 +462,10 @@ export const projects: Project[] = [
     titleEn: "Bahía de Marbella Apartment Renovation",
     category: "Interiorismo",
     year: "2019",
+    description:
+      "Rehabilitación de un apartamento en Bahía de Marbella con la luz como condicionante de partida: pequeños gestos arquitectónicos, de materialidad y decoración que transforman un espacio obsoleto en una residencia luminosa para todo el año.",
+    descriptionEn:
+      "Renovation of an apartment in Bahía de Marbella with light as the starting condition: subtle architectural, material and decorative gestures that transform a dated space into a bright, year-round residence.",
     url: "https://momaa.es/rehabilitacion-apartamento-bahia-de-marbella/",
   },
   {
@@ -397,6 +481,10 @@ export const projects: Project[] = [
     title: "Villa Rio Lissen, Valle del Sol, Marbella",
     category: "Residencial",
     year: "2018",
+    description:
+      "Casa Río, en Guadalmina: una casa patio contemporánea que reinterpreta la vivienda andaluza en el siglo XXI, orientada hacia las vistas de la montaña y el horizonte del mar.",
+    descriptionEn:
+      "Casa Río, in Guadalmina: a contemporary patio house that reinterprets the traditional Andalusian home for the 21st century, oriented towards views of the mountains and the sea horizon.",
     url: "https://momaa.es/villa-rio-lissen/",
   },
   {
@@ -458,6 +546,10 @@ export const projects: Project[] = [
     title: "Casa Lucia, Madrid",
     category: "Residencial",
     year: "2017",
+    description:
+      "Reforma de una vivienda en un edificio plurifamiliar cerca del Parque del Retiro en Madrid: una redistribución interior adaptada a las necesidades actuales de la familia, con mejoras de envolvente e instalaciones conforme al CTE.",
+    descriptionEn:
+      "Renovation of a home in a multifamily building near El Retiro Park in Madrid: an interior redistribution adapted to the family's current needs, with upgrades to the envelope and installations in line with the Spanish Technical Building Code (CTE).",
     url: "https://momaa.es/casa-lucia-madrid-rehabilitacion/",
   },
   {
@@ -496,6 +588,10 @@ export const projects: Project[] = [
     titleEn: "Dining Room in La Virginia, Marbella",
     category: "Interiorismo",
     year: "2016",
+    description:
+      "Diseño de un comedor en La Virginia, Marbella, condicionado por su ubicación: un espacio acogedor con un mobiliario que dialoga con la ventana orientada al norte, ideal para los almuerzos familiares.",
+    descriptionEn:
+      "Design of a dining room in La Virginia, Marbella, shaped by its location: a cozy space with furniture that complements the north-facing window, ideal for family lunches.",
     url: "https://momaa.es/comedor-la-virginia-marbella/",
   },
   {
@@ -578,6 +674,10 @@ export const projects: Project[] = [
     titleEn: "Villa in Alicates Playas, Marbella",
     category: "Residencial",
     year: "2003",
+    description:
+      "Villa en Alicates Playas, Marbella (2003): una arquitectura moderna de volúmenes marcados que rompía con la tipología de \"mansión andaluza\" de la época, apostando por espacios prácticos y sugerentes sin renunciar al diseño.",
+    descriptionEn:
+      "Villa in Alicates Playas, Marbella (2003): a modern architecture of well-defined volumes that broke with the era's typical \"Andalusian mansion\", favouring practical, suggestive spaces without giving up on design.",
     url: "https://momaa.es/alicates-playas-35/",
   },
   {
@@ -593,6 +693,10 @@ export const projects: Project[] = [
     title: "Villa Loriana, Marbella Golden Mile",
     category: "Residencial",
     year: "2000",
+    description:
+      "Villa Loriana, en la Milla de Oro de Marbella: una de las viviendas más lujosas de la Costa del Sol, desarrollada por Felipe Recordon con Andrés M. Mateo como arquitecto junior e ingeniero de edificación.",
+    descriptionEn:
+      "Villa Loriana, on Marbella's Golden Mile: one of the most luxurious homes on the Costa del Sol, developed by Felipe Recordon with Andrés M. Mateo as junior architect and building engineer.",
     url: "https://momaa.es/villa-loriana/",
   },
 ];
