@@ -198,9 +198,9 @@ export function ProjectGallery({ images, title, lang }: ProjectGalleryProps) {
             type="button"
             onClick={close}
             aria-label={lang === "es" ? "Cerrar" : "Close"}
-            className="absolute top-6 right-6 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors duration-200"
+            className="absolute z-10 top-3 right-3 md:top-6 md:right-6 p-3 text-white/70 hover:text-white transition-colors duration-200"
           >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
                 d="M4 4l16 16M20 4L4 20"
                 stroke="currentColor"
@@ -218,7 +218,7 @@ export function ProjectGallery({ images, title, lang }: ProjectGalleryProps) {
                 showPrev();
               }}
               aria-label={lang === "es" ? "Anterior" : "Previous"}
-              className="absolute left-2 md:left-8 text-white/70 hover:text-white transition-colors duration-200 p-2"
+              className="absolute z-10 left-1 md:left-8 p-3 text-white/70 hover:text-white transition-colors duration-200"
             >
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                 <path
@@ -232,7 +232,7 @@ export function ProjectGallery({ images, title, lang }: ProjectGalleryProps) {
           )}
 
           <div
-            className="relative w-[90vw] h-[80vh] max-w-5xl"
+            className="relative w-[90vw] h-[70vh] md:h-[80vh] max-w-5xl"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -253,7 +253,7 @@ export function ProjectGallery({ images, title, lang }: ProjectGalleryProps) {
                 showNext();
               }}
               aria-label={lang === "es" ? "Siguiente" : "Next"}
-              className="absolute right-2 md:right-8 text-white/70 hover:text-white transition-colors duration-200 p-2"
+              className="absolute z-10 right-1 md:right-8 p-3 text-white/70 hover:text-white transition-colors duration-200"
             >
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                 <path

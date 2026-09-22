@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useLocale } from "next-intl";
 import { projects, getTitle, type Project, type ProjectCategory } from "@/data/projects";
+import { getProjectDetail } from "@/data/project-details";
 import { Icon } from "@/components/atoms/Icon";
 
 const PLACEHOLDER_IMAGES = [
@@ -46,6 +47,8 @@ const sortedProjects = [
 ];
 
 function getImage(project: Project): string {
+  const detail = getProjectDetail(project.id);
+  if (detail?.image) return detail.image;
   if (project.image) return project.image;
   const index = projects.indexOf(project) % PLACEHOLDER_IMAGES.length;
   return PLACEHOLDER_IMAGES[index];

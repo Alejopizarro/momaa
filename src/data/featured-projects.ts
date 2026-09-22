@@ -1,4 +1,5 @@
 import { projects, type Project } from "@/data/projects";
+import { getProjectDetail } from "@/data/project-details";
 
 export const FEATURED_PROJECT_IDS = [
   "rehabilitacion-consistorial-marbella",
@@ -23,6 +24,8 @@ export const featuredProjects = FEATURED_PROJECT_IDS.map((id) =>
 ).filter((p): p is Project => p !== undefined);
 
 export function getFeaturedProjectImage(project: Project): string {
+  const detail = getProjectDetail(project.id);
+  if (detail?.image) return detail.image;
   if (project.image) return project.image;
   const idx = projects.indexOf(project);
   return PLACEHOLDER_IMAGES[idx % PLACEHOLDER_IMAGES.length];

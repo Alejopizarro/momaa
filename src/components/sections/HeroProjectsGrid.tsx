@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { projects, getTitle, type Project } from "@/data/projects";
+import { getProjectDetail } from "@/data/project-details";
 
 const PLACEHOLDER_IMAGES = [
   "/momaa-hero-1.jpg",
@@ -16,7 +17,9 @@ const PLACEHOLDER_IMAGES = [
 ];
 
 const getImage = (project: Project, index: number): string =>
-  project.image ?? PLACEHOLDER_IMAGES[index % PLACEHOLDER_IMAGES.length];
+  getProjectDetail(project.id)?.image ??
+  project.image ??
+  PLACEHOLDER_IMAGES[index % PLACEHOLDER_IMAGES.length];
 
 // Los 15 proyectos con ficha de detalle aparecen primero en el hero
 const FEATURED_IDS = [
