@@ -7,6 +7,7 @@ import { routing } from "../../../../../routing";
 import { projects } from "@/data/projects";
 import { getProjectDetail } from "@/data/project-details";
 import { ShareButtons } from "@/components/atoms/ShareButtons";
+import { ProjectGallery } from "@/components/sections/ProjectGallery";
 
 const PLACEHOLDER_IMAGES = [
   "/momaa-hero-1.jpg",
@@ -34,31 +35,6 @@ function resolveHeroImage(id: string): string {
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     projects.map((p) => ({ locale, id: p.id })),
-  );
-}
-
-function GallerySlot({
-  src,
-  alt,
-  className = "",
-}: {
-  src: string | null;
-  alt: string;
-  className?: string;
-}) {
-  if (!src) {
-    return <div className={`${className} bg-[#e8e4e0]`} />;
-  }
-  return (
-    <div className={`${className} relative overflow-hidden`}>
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
-    </div>
   );
 }
 
@@ -292,126 +268,11 @@ export default function ProjectPage({
       </div>
 
       {/* Gallery */}
-      {(() => {
-        // Máximo 4 imágenes visibles; el grid se adapta al número real disponible
-        const allImages = [heroImage, ...(detail.images ?? [])];
-        const visibleImages = allImages.slice(0, 4);
-        const hasMore = allImages.length > 4;
-        const extraCount = allImages.length - 4;
-
-        return (
-          <section className="py-16 md:py-24">
-            <div className="max-w-7xl mx-auto px-8 md:px-16">
-              {/* Header galería */}
-              <div className="flex items-center justify-between mb-8">
-                <p className="text-[9px] uppercase tracking-[0.4em] text-black/30">
-                  {lang === "es" ? "Galería" : "Gallery"}
-                </p>
-                {hasMore && (
-                  <a
-                    href={detail.externalUrl ?? "#"}
-                    target={detail.externalUrl ? "_blank" : undefined}
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-[#E8572A] hover:text-[#d14820] transition-colors duration-200"
-                  >
-                    {lang === "es"
-                      ? `Ver todo (${extraCount + 4})`
-                      : `See all (${extraCount + 4})`}
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path
-                        d="M2 6h8M6 2l4 4-4 4"
-                        stroke="currentColor"
-                        strokeWidth="1.2"
-                        strokeLinecap="square"
-                      />
-                    </svg>
-                  </a>
-                )}
-              </div>
-
-              {/* Grid asimétrico, adaptado al número de imágenes (1 a 4) */}
-              <div className="flex flex-col gap-[3px]">
-                {visibleImages.length === 1 && (
-                  <GallerySlot
-                    src={visibleImages[0]}
-                    alt={`${title} 1`}
-                    className="w-full h-[70vw] md:h-[520px]"
-                  />
-                )}
-
-                {visibleImages.length === 2 && (
-                  <div className="flex flex-col md:flex-row gap-[3px]">
-                    <GallerySlot
-                      src={visibleImages[0]}
-                      alt={`${title} 1`}
-                      className="w-full md:w-2/3 h-[56vw] md:h-[420px]"
-                    />
-                    <GallerySlot
-                      src={visibleImages[1]}
-                      alt={`${title} 2`}
-                      className="w-full md:w-1/3 h-[56vw] md:h-[420px]"
-                    />
-                  </div>
-                )}
-
-                {visibleImages.length === 3 && (
-                  <>
-                    <div className="flex flex-col md:flex-row gap-[3px]">
-                      <GallerySlot
-                        src={visibleImages[0]}
-                        alt={`${title} 1`}
-                        className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
-                      />
-                      <GallerySlot
-                        src={visibleImages[1]}
-                        alt={`${title} 2`}
-                        className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
-                      />
-                    </div>
-                    <GallerySlot
-                      src={visibleImages[2]}
-                      alt={`${title} 3`}
-                      className="w-full h-[56vw] md:h-[380px]"
-                    />
-                  </>
-                )}
-
-                {visibleImages.length >= 4 && (
-                  <>
-                    {/* Fila 1: 2/3 + 1/3 */}
-                    <div className="flex flex-col md:flex-row gap-[3px]">
-                      <GallerySlot
-                        src={visibleImages[0]}
-                        alt={`${title} 1`}
-                        className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
-                      />
-                      <GallerySlot
-                        src={visibleImages[1]}
-                        alt={`${title} 2`}
-                        className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
-                      />
-                    </div>
-
-                    {/* Fila 2: 1/3 + 2/3 */}
-                    <div className="flex flex-col md:flex-row gap-[3px]">
-                      <GallerySlot
-                        src={visibleImages[2]}
-                        alt={`${title} 3`}
-                        className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
-                      />
-                      <GallerySlot
-                        src={visibleImages[3]}
-                        alt={`${title} 4`}
-                        className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-          </section>
-        );
-      })()}
+      <ProjectGallery
+        images={[heroImage, ...(detail.images ?? [])]}
+        title={title}
+        lang={lang}
+      />
 
       {/* Bottom nav */}
       <div className="border-t border-black/8 px-8 md:px-16 py-10">

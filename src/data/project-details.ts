@@ -195,6 +195,12 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'el-trapiche-casa-8',
+    image: '/el-trapiche-casa-8-1.jpeg',
+    images: [
+      '/el-trapiche-casa-8-2.jpeg',
+      '/el-trapiche-casa-8-3.jpeg',
+      '/el-trapiche-casa-8-4.jpeg',
+    ],
     title: {
       es: 'El Trapiche, Casa 8, Marbella',
       en: 'El Trapiche, House 8, Marbella',
@@ -231,6 +237,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: '49-viviendas-casares',
+    image: '/49-viviendas-casares-1.jpg',
+    images: [
+      '/49-viviendas-casares-2.jpg',
+      '/49-viviendas-casares-3.jpg',
+      '/49-viviendas-casares-4.jpg',
+      '/49-viviendas-casares-5.jpg',
+    ],
     title: {
       es: '49 Viviendas en Casares — Royal Casares Homes, Neinor Homes',
       en: '49 Apartments in Casares — Royal Casares Homes, Neinor Homes',
@@ -299,6 +312,18 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'bungalow-los-monteros',
+    image: '/bungalow-los-monteros-1.jpg',
+    images: [
+      '/bungalow-los-monteros-2.jpg',
+      '/bungalow-los-monteros-3.jpg',
+      '/bungalow-los-monteros-4.jpg',
+      '/bungalow-los-monteros-5.jpg',
+      '/bungalow-los-monteros-6.jpg',
+      '/bungalow-los-monteros-7.jpg',
+      '/bungalow-los-monteros-8.jpg',
+      '/bungalow-los-monteros-9.jpg',
+      '/bungalow-los-monteros-10.jpg',
+    ],
     title: {
       es: 'Rehabilitación Bungalow en Los Monteros, Marbella',
       en: 'Bungalow Rehabilitation in Los Monteros, Marbella',
@@ -334,6 +359,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'bungalow-caribplaya',
+    image: '/bungalow-caribplaya-1.jpg',
+    images: [
+      '/bungalow-caribplaya-2.jpg',
+      '/bungalow-caribplaya-3.jpg',
+      '/bungalow-caribplaya-4.jpg',
+      '/bungalow-caribplaya-5.jpg',
+    ],
     title: {
       es: 'Rehabilitación de Bungalow en Caribplaya, Marbella',
       en: 'Bungalow Rehabilitation in Caribplaya, Marbella',
@@ -365,6 +397,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'casa-l-nueva-andalucia',
+    image: '/casa-l-nueva-andalucia-1.jpg',
     title: {
       es: 'Casa L. Luis de Góngora, Nueva Andalucía, Marbella',
       en: 'Casa L. Luis de Góngora, Nueva Andalucía, Marbella',
@@ -397,6 +430,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'santa-maria-golf-casa-11',
+    image: '/santa-maria-golf-casa-11-1.jpeg',
+    images: [
+      '/santa-maria-golf-casa-11-2.jpeg',
+      '/santa-maria-golf-casa-11-3.jpeg',
+    ],
     title: {
       es: 'Santa María Golf, Casa 11, Marbella',
       en: 'Santa María Golf, House 11, Marbella',
@@ -468,6 +506,14 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'piscina-solarium-alicates-playas',
+    image: '/piscina-solarium-alicates-playas-1.jpg',
+    images: [
+      '/piscina-solarium-alicates-playas-2.jpg',
+      '/piscina-solarium-alicates-playas-3.jpg',
+      '/piscina-solarium-alicates-playas-4.jpg',
+      '/piscina-solarium-alicates-playas-5.jpg',
+      '/piscina-solarium-alicates-playas-6.jpg',
+    ],
     title: {
       es: 'Piscina y Solarium en Alicates Playas, Marbella',
       en: 'Pool & Sun Deck in Alicates Playas, Marbella',
@@ -504,6 +550,15 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'fuente-bautismal-san-pedro',
+    image: '/fuente-bautismal-san-pedro-1.jpg',
+    images: [
+      '/fuente-bautismal-san-pedro-2.jpg',
+      '/fuente-bautismal-san-pedro-3.jpg',
+      '/fuente-bautismal-san-pedro-4.jpg',
+      '/fuente-bautismal-san-pedro-5.jpg',
+      '/fuente-bautismal-san-pedro-6.jpg',
+      '/fuente-bautismal-san-pedro-7.jpg',
+    ],
     title: {
       es: 'Fuente Bautismal, San Pedro Alcántara, Marbella',
       en: 'Baptismal Fountain, San Pedro Alcántara, Marbella',
@@ -540,6 +595,20 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-ocean',
+    image: '/villa-ocean-1.jpg',
+    images: [
+      '/villa-ocean-2.jpg',
+      '/villa-ocean-3.jpg',
+      '/villa-ocean-4.jpg',
+      '/villa-ocean-5.jpg',
+      '/villa-ocean-6.jpg',
+      '/villa-ocean-7.jpg',
+      '/villa-ocean-8.jpg',
+      '/villa-ocean-9.jpg',
+      '/villa-ocean-10.jpg',
+      '/villa-ocean-11.jpg',
+      '/villa-ocean-12.jpg',
+    ],
     title: {
       es: 'Villa Ocean, Marbella',
       en: 'Villa Ocean, Marbella',
@@ -581,6 +650,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'centro-usos-multiples-ermita-calvario',
+    image: '/centro-usos-multiples-ermita-calvario.jpg',
     title: {
       es: 'Centro de Usos Múltiples junto a la Ermita del Calvario',
       en: 'Multi-Use Centre at the Ermita del Calvario',
@@ -618,6 +688,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'biblioteca-san-pedro',
+    image: '/biblioteca-san-pedro.jpg',
     title: {
       es: 'Biblioteca Municipal de San Pedro de Alcántara',
       en: 'San Pedro de Alcántara Municipal Library',
@@ -690,6 +761,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'two-houses-fuengirola',
+    image: '/two-houses-fuengirola-1.jpg',
+    images: [
+      '/two-houses-fuengirola-2.jpg',
+      '/two-houses-fuengirola-3.jpg',
+      '/two-houses-fuengirola-4.jpg',
+      '/two-houses-fuengirola-5.jpg',
+    ],
     title: {
       es: 'Two Houses in Fuengirola',
       en: 'Two Houses in Fuengirola',
@@ -728,6 +806,15 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'aparcamiento-ojen',
+    image: '/aparcamiento-ojen-1.jpg',
+    images: [
+      '/aparcamiento-ojen-2.jpg',
+      '/aparcamiento-ojen-3.jpg',
+      '/aparcamiento-ojen-4.jpg',
+      '/aparcamiento-ojen-5.jpg',
+      '/aparcamiento-ojen-6.jpg',
+      '/aparcamiento-ojen-7.jpg',
+    ],
     title: {
       es: 'Aparcamiento Subterráneo junto al Consultorio Médico, Ojén',
       en: 'Underground Car Park at the Medical Centre, Ojén',
@@ -762,6 +849,16 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'casa-torreon-marbella',
+    image: '/casa-torreon-marbella-1.jpg',
+    images: [
+      '/casa-torreon-marbella-2.jpg',
+      '/casa-torreon-marbella-3.jpg',
+      '/casa-torreon-marbella-4.jpg',
+      '/casa-torreon-marbella-5.jpg',
+      '/casa-torreon-marbella-6.jpg',
+      '/casa-torreon-marbella-7.jpg',
+      '/casa-torreon-marbella-8.jpg',
+    ],
     title: {
       es: 'Casa Torreón, Ampliación y Rehabilitación de Viv. Unifamiliar, Marbella',
       en: 'Casa Torreón, Extension and Renovation of a Single-Family Home, Marbella',
@@ -799,6 +896,12 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'escuela-danza-musica-san-pedro',
+    image: '/escuela-danza-musica-san-pedro-1.jpg',
+    images: [
+      '/escuela-danza-musica-san-pedro-2.jpg',
+      '/escuela-danza-musica-san-pedro-3.jpg',
+      '/escuela-danza-musica-san-pedro-4.jpg',
+    ],
     title: {
       es: 'Concurso Escuela de Danza y Música, San Pedro Alcántara, Marbella',
       en: 'Dance and Music School Competition, San Pedro Alcántara, Marbella',
@@ -842,6 +945,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'casa-tres-patios-marbella',
+    image: '/casa-tres-patios-marbella-1.jpg',
+    images: [
+      '/casa-tres-patios-marbella-2.jpg',
+      '/casa-tres-patios-marbella-3.jpg',
+      '/casa-tres-patios-marbella-4.jpg',
+      '/casa-tres-patios-marbella-5.jpg',
+    ],
     title: {
       es: 'Vivienda Entre Medianeras, Casco Histórico, Marbella',
       en: 'Party Wall House, Historic Centre, Marbella',
@@ -876,6 +986,14 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'eliminacion-barreras-san-pedro',
+    image: '/eliminacion-barreras-san-pedro-1.jpg',
+    images: [
+      '/eliminacion-barreras-san-pedro-2.jpg',
+      '/eliminacion-barreras-san-pedro-3.jpg',
+      '/eliminacion-barreras-san-pedro-4.jpg',
+      '/eliminacion-barreras-san-pedro-5.jpg',
+      '/eliminacion-barreras-san-pedro-6.jpg',
+    ],
     title: {
       es: 'Eliminación de Barreras Arquitectónicas, San Pedro Alcántara, Marbella',
       en: 'Architectural Barriers Removal, San Pedro Alcántara, Marbella',
@@ -911,6 +1029,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'pasarela-madera-marbella',
+    image: '/pasarela-madera-marbella-1.jpg',
     title: {
       es: 'Pasarela de Madera sobre el Río Guadaiza, Marbella',
       en: 'Timber Footbridge over the Guadaiza River, Marbella',
@@ -945,6 +1064,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'expositor-british-school',
+    image: '/expositor-british-school-1.png',
+    images: [
+      '/expositor-british-school-2.jpg',
+      '/expositor-british-school-3.jpg',
+    ],
     title: {
       es: 'Librería Expositora, British School Marbella',
       en: 'Display Bookcase, British School Marbella',
@@ -977,6 +1101,18 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'british-school-marbella-2020',
+    image: '/british-school-marbella-2020-1.jpg',
+    images: [
+      '/british-school-marbella-2020-2.jpg',
+      '/british-school-marbella-2020-3.jpg',
+      '/british-school-marbella-2020-4.jpg',
+      '/british-school-marbella-2020-5.jpg',
+      '/british-school-marbella-2020-6.jpg',
+      '/british-school-marbella-2020-7.jpg',
+      '/british-school-marbella-2020-8.jpg',
+      '/british-school-marbella-2020-9.jpg',
+      '/british-school-marbella-2020-10.jpg',
+    ],
     title: {
       es: 'British International School of Marbella',
       en: 'British International School of Marbella',
@@ -1015,6 +1151,12 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'mostrador-bism',
+    image: '/mostrador-bism-1.jpeg',
+    images: [
+      '/mostrador-bism-2.jpeg',
+      '/mostrador-bism-3.jpeg',
+      '/mostrador-bism-4.jpg',
+    ],
     title: {
       es: 'Mostrador de Recepción, BISM',
       en: 'Reception Counter, BISM',
@@ -1049,6 +1191,18 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'rehabilitacion-edificio-publico-marbella',
+    image: '/rehabilitacion-edificio-publico-marbella-1.jpg',
+    images: [
+      '/rehabilitacion-edificio-publico-marbella-2.jpg',
+      '/rehabilitacion-edificio-publico-marbella-3.jpg',
+      '/rehabilitacion-edificio-publico-marbella-4.jpg',
+      '/rehabilitacion-edificio-publico-marbella-5.jpg',
+      '/rehabilitacion-edificio-publico-marbella-6.jpg',
+      '/rehabilitacion-edificio-publico-marbella-7.jpg',
+      '/rehabilitacion-edificio-publico-marbella-8.jpg',
+      '/rehabilitacion-edificio-publico-marbella-9.jpg',
+      '/rehabilitacion-edificio-publico-marbella-10.jpg',
+    ],
     title: {
       es: 'Rehabilitación de Edificio Público Protegido, Marbella',
       en: 'Rehabilitation of a Listed Public Building, Marbella',
@@ -1083,6 +1237,12 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'regeneracion-urbana-marbella',
+    image: '/regeneracion-urbana-marbella-1.jpg',
+    images: [
+      '/regeneracion-urbana-marbella-2.jpg',
+      '/regeneracion-urbana-marbella-3.jpg',
+      '/regeneracion-urbana-marbella-4.jpg',
+    ],
     title: {
       es: 'Regeneración Urbana, San Pedro Alcántara — Ciudad Amable Marbella',
       en: 'Urban Regeneration, San Pedro Alcántara — Friendly City Marbella',
@@ -1117,6 +1277,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'aula-abierta-colegio-eic',
+    image: '/aula-abierta-colegio-eic-1.jpg',
+    images: [
+      '/aula-abierta-colegio-eic-2.jpg',
+      '/aula-abierta-colegio-eic-3.jpg',
+    ],
     title: {
       es: 'EIC — Proyecto de Aula Abierta',
       en: 'EIC — Open Classroom Project',
@@ -1149,6 +1314,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'oficina-turismo-san-pedro',
+    image: '/oficina-turismo-san-pedro-1.jpg',
+    images: [
+      '/oficina-turismo-san-pedro-2.jpg',
+      '/oficina-turismo-san-pedro-3.jpg',
+    ],
     title: {
       es: 'Oficina de Turismo, Comercio y Fiestas, San Pedro Alcántara',
       en: 'Tourism, Commerce and Festivities Office, San Pedro Alcántara',
@@ -1187,6 +1357,23 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'aparcamiento-guadalmina',
+    image: '/aparcamiento-guadalmina-1.jpg',
+    images: [
+      '/aparcamiento-guadalmina-2.jpg',
+      '/aparcamiento-guadalmina-3.jpg',
+      '/aparcamiento-guadalmina-4.jpg',
+      '/aparcamiento-guadalmina-5.jpeg',
+      '/aparcamiento-guadalmina-6.jpg',
+      '/aparcamiento-guadalmina-7.jpg',
+      '/aparcamiento-guadalmina-8.jpg',
+      '/aparcamiento-guadalmina-9.jpeg',
+      '/aparcamiento-guadalmina-10.jpeg',
+      '/aparcamiento-guadalmina-11.jpeg',
+      '/aparcamiento-guadalmina-12.jpeg',
+      '/aparcamiento-guadalmina-13.jpg',
+      '/aparcamiento-guadalmina-14.jpg',
+      '/aparcamiento-guadalmina-15.jpg',
+    ],
     title: {
       es: 'Aparcamiento Ecológico en Guadalmina, Público',
       en: 'Eco Car Park in Guadalmina, Public',
@@ -1224,6 +1411,15 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'colegio-internacional-lisbon',
+    image: '/colegio-internacional-lisbon-1.jpeg',
+    images: [
+      '/colegio-internacional-lisbon-2.jpg',
+      '/colegio-internacional-lisbon-3.jpg',
+      '/colegio-internacional-lisbon-4.jpg',
+      '/colegio-internacional-lisbon-5.jpg',
+      '/colegio-internacional-lisbon-6.jpg',
+      '/colegio-internacional-lisbon-7.jpg',
+    ],
     title: {
       es: 'Colegio Internacional Lisboa',
       en: 'Lisbon International School',
@@ -1255,6 +1451,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-arbel-valle-del-sol',
+    image: '/villa-arbel-valle-del-sol-1.jpg',
+    images: [
+      '/villa-arbel-valle-del-sol-2.jpg',
+      '/villa-arbel-valle-del-sol-3.jpg',
+      '/villa-arbel-valle-del-sol-4.jpg',
+      '/villa-arbel-valle-del-sol-5.jpg',
+    ],
     title: {
       es: 'Villa Arbel, Valle del Sol, Marbella',
       en: 'Villa Arbel, Valle del Sol, Marbella',
@@ -1283,6 +1486,17 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'oficina-boque-maison-lu',
+    image: '/oficina-boque-maison-lu-1.jpg',
+    images: [
+      '/oficina-boque-maison-lu-2.jpg',
+      '/oficina-boque-maison-lu-3.jpg',
+      '/oficina-boque-maison-lu-4.jpg',
+      '/oficina-boque-maison-lu-5.jpg',
+      '/oficina-boque-maison-lu-6.jpg',
+      '/oficina-boque-maison-lu-7.jpg',
+      '/oficina-boque-maison-lu-8.jpg',
+      '/oficina-boque-maison-lu-9.jpg',
+    ],
     title: {
       es: 'Oficina Boqué Group',
       en: 'Boqué Group Office',
@@ -1317,6 +1531,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'loft-design-marbella',
+    image: '/loft-design-marbella-1.jpg',
+    images: [
+      '/loft-design-marbella-2.jpg',
+      '/loft-design-marbella-3.jpg',
+    ],
     title: {
       es: 'Loft Design, Marbella',
       en: 'Loft Design, Marbella',
@@ -1351,6 +1570,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-olivier-marbella-golf',
+    image: '/villa-olivier-marbella-golf-1.jpg',
+    images: [
+      '/villa-olivier-marbella-golf-2.jpg',
+      '/villa-olivier-marbella-golf-3.jpg',
+    ],
     title: {
       es: 'Villa Olivier II, Marbella Golf Resort',
       en: 'Villa Olivier II, Marbella Golf Resort',
@@ -1379,6 +1603,12 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'oficina-colegio-lisboa',
+    image: '/oficina-colegio-lisboa-1.jpg',
+    images: [
+      '/oficina-colegio-lisboa-2.jpg',
+      '/oficina-colegio-lisboa-3.jpg',
+      '/oficina-colegio-lisboa-4.jpg',
+    ],
     title: {
       es: 'Oficina Colegio Lisboa',
       en: 'Lisboa School Office',
@@ -1407,6 +1637,16 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'rehabilitacion-apartamento-bahia-marbella',
+    image: '/rehabilitacion-apartamento-bahia-marbella-1.jpg',
+    images: [
+      '/rehabilitacion-apartamento-bahia-marbella-2.jpg',
+      '/rehabilitacion-apartamento-bahia-marbella-3.jpg',
+      '/rehabilitacion-apartamento-bahia-marbella-4.jpg',
+      '/rehabilitacion-apartamento-bahia-marbella-5.jpg',
+      '/rehabilitacion-apartamento-bahia-marbella-6.jpg',
+      '/rehabilitacion-apartamento-bahia-marbella-7.jpg',
+      '/rehabilitacion-apartamento-bahia-marbella-8.jpg',
+    ],
     title: {
       es: 'Rehabilitación Apartamento Bahía de Marbella',
       en: 'Bahía de Marbella Apartment Renovation',
@@ -1439,6 +1679,10 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'pabellon-rio-verde-ii',
+    image: '/pabellon-rio-verde-ii-1.jpg',
+    images: [
+      '/pabellon-rio-verde-ii-2.jpg',
+    ],
     title: {
       es: 'Pabellón Río Verde II, Marbella',
       en: 'Río Verde II Pavilion, Marbella',
@@ -1467,6 +1711,16 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-rio-lissen',
+    image: '/villa-rio-lissen-1.jpg',
+    images: [
+      '/villa-rio-lissen-2.jpg',
+      '/villa-rio-lissen-3.jpg',
+      '/villa-rio-lissen-4.jpg',
+      '/villa-rio-lissen-5.jpg',
+      '/villa-rio-lissen-6.jpg',
+      '/villa-rio-lissen-7.jpg',
+      '/villa-rio-lissen-8.jpg',
+    ],
     title: {
       es: 'Villa Rio Lissen',
       en: 'Villa Rio Lissen',
@@ -1506,6 +1760,15 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'colegio-jiangyn-china',
+    image: '/colegio-jiangyn-china-1.jpg',
+    images: [
+      '/colegio-jiangyn-china-2.jpg',
+      '/colegio-jiangyn-china-3.jpg',
+      '/colegio-jiangyn-china-4.jpg',
+      '/colegio-jiangyn-china-5.jpg',
+      '/colegio-jiangyn-china-6.jpg',
+      '/colegio-jiangyn-china-7.jpg',
+    ],
     title: {
       es: 'Colegio en Jiangyn, China',
       en: 'School in Jiangyn, China',
@@ -1539,6 +1802,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'pabellon-rio-verde',
+    image: '/pabellon-rio-verde-1.jpg',
+    images: [
+      '/pabellon-rio-verde-2.jpg',
+      '/pabellon-rio-verde-3.jpg',
+      '/pabellon-rio-verde-4.jpg',
+      '/pabellon-rio-verde-5.jpg',
+    ],
     title: {
       es: 'Pabellón Río Verde, Marbella',
       en: 'Río Verde Pavilion, Marbella',
@@ -1567,6 +1837,15 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'pabellon-musica-la-virginia',
+    image: '/pabellon-musica-la-virginia-1.jpg',
+    images: [
+      '/pabellon-musica-la-virginia-2.jpg',
+      '/pabellon-musica-la-virginia-3.jpg',
+      '/pabellon-musica-la-virginia-4.jpg',
+      '/pabellon-musica-la-virginia-5.jpg',
+      '/pabellon-musica-la-virginia-6.jpg',
+      '/pabellon-musica-la-virginia-7.jpg',
+    ],
     title: {
       es: 'Pabellón de la Música, La Virginia, Marbella',
       en: 'Music Pavilion, La Virginia, Marbella',
@@ -1598,6 +1877,17 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'apartamento-coral-beach',
+    image: '/apartamento-coral-beach-1.jpg',
+    images: [
+      '/apartamento-coral-beach-2.jpg',
+      '/apartamento-coral-beach-3.jpg',
+      '/apartamento-coral-beach-4.jpg',
+      '/apartamento-coral-beach-5.jpg',
+      '/apartamento-coral-beach-6.jpg',
+      '/apartamento-coral-beach-7.jpg',
+      '/apartamento-coral-beach-8.jpg',
+      '/apartamento-coral-beach-9.jpg',
+    ],
     title: {
       es: 'Apartamento Esmeralda, Coral Beach, Marbella',
       en: 'Apartamento Esmeralda, Coral Beach, Marbella',
@@ -1626,6 +1916,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'eic-nuevo-vestuario',
+    image: '/eic-nuevo-vestuario-1.jpg',
+    images: [
+      '/eic-nuevo-vestuario-2.jpg',
+      '/eic-nuevo-vestuario-3.jpg',
+      '/eic-nuevo-vestuario-4.jpg',
+      '/eic-nuevo-vestuario-5.jpg',
+    ],
     title: {
       es: 'EIC — Nuevo Vestuario, English International College',
       en: 'EIC — New Changing Rooms, English International College',
@@ -1654,6 +1951,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'los-porqueroles',
+    image: '/los-porqueroles-1.jpg',
+    images: [
+      '/los-porqueroles-2.jpg',
+      '/los-porqueroles-3.jpg',
+    ],
     title: {
       es: 'Urbanización Los Porqueroles',
       en: 'Los Porqueroles Development',
@@ -1682,6 +1984,14 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'momaa-loft-office',
+    image: '/momaa-loft-office-1.jpg',
+    images: [
+      '/momaa-loft-office-2.jpg',
+      '/momaa-loft-office-3.jpg',
+      '/momaa-loft-office-4.jpg',
+      '/momaa-loft-office-5.jpg',
+      '/momaa-loft-office-6.jpg',
+    ],
     title: {
       es: 'Office MoMaA',
       en: 'Office MoMaA',
@@ -1714,6 +2024,17 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'casa-lucia-madrid',
+    image: '/casa-lucia-madrid-1.jpg',
+    images: [
+      '/casa-lucia-madrid-2.jpg',
+      '/casa-lucia-madrid-3.jpg',
+      '/casa-lucia-madrid-4.jpg',
+      '/casa-lucia-madrid-5.jpg',
+      '/casa-lucia-madrid-6.jpg',
+      '/casa-lucia-madrid-7.jpg',
+      '/casa-lucia-madrid-8.jpg',
+      '/casa-lucia-madrid-9.jpg',
+    ],
     title: {
       es: 'Casa Lucía, Madrid',
       en: 'Casa Lucía, Madrid',
@@ -1753,6 +2074,18 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-olivier-2017',
+    image: '/villa-olivier-2017-1.jpg',
+    images: [
+      '/villa-olivier-2017-2.jpg',
+      '/villa-olivier-2017-3.jpg',
+      '/villa-olivier-2017-4.jpg',
+      '/villa-olivier-2017-5.jpg',
+      '/villa-olivier-2017-6.jpg',
+      '/villa-olivier-2017-7.jpg',
+      '/villa-olivier-2017-8.jpg',
+      '/villa-olivier-2017-9.jpg',
+      '/villa-olivier-2017-10.jpg',
+    ],
     title: {
       es: 'Villa Olivier I, Marbella Golf Resort',
       en: 'Villa Olivier I, Marbella Golf Resort',
@@ -1784,6 +2117,17 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'colegio-putian-china',
+    image: '/colegio-putian-china-1.jpg',
+    images: [
+      '/colegio-putian-china-2.jpg',
+      '/colegio-putian-china-3.jpg',
+      '/colegio-putian-china-4.jpg',
+      '/colegio-putian-china-5.jpg',
+      '/colegio-putian-china-6.jpg',
+      '/colegio-putian-china-7.jpg',
+      '/colegio-putian-china-8.jpg',
+      '/colegio-putian-china-9.jpg',
+    ],
     title: {
       es: 'Colegio en Putian, China',
       en: 'School in Putian, China',
@@ -1816,6 +2160,19 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-alberquilla-la-virginia',
+    image: '/villa-alberquilla-la-virginia-1.jpg',
+    images: [
+      '/villa-alberquilla-la-virginia-2.jpg',
+      '/villa-alberquilla-la-virginia-3.jpg',
+      '/villa-alberquilla-la-virginia-4.jpg',
+      '/villa-alberquilla-la-virginia-5.jpg',
+      '/villa-alberquilla-la-virginia-6.jpg',
+      '/villa-alberquilla-la-virginia-7.jpg',
+      '/villa-alberquilla-la-virginia-8.jpg',
+      '/villa-alberquilla-la-virginia-9.jpg',
+      '/villa-alberquilla-la-virginia-10.jpg',
+      '/villa-alberquilla-la-virginia-11.jpg',
+    ],
     title: {
       es: 'Villa Alberquilla, La Virginia, Marbella',
       en: 'Villa Alberquilla, La Virginia, Marbella',
@@ -1848,6 +2205,10 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'jacuzzi-en-terraza',
+    image: '/jacuzzi-en-terraza-1.jpg',
+    images: [
+      '/jacuzzi-en-terraza-2.jpg',
+    ],
     title: {
       es: 'Jacuzzi en Terraza, Marbella',
       en: 'Terrace Jacuzzi, Marbella',
@@ -1876,6 +2237,7 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'comedor-la-virginia',
+    image: '/comedor-la-virginia-1.jpg',
     title: {
       es: 'Comedor en La Virginia, Marbella',
       en: 'Dining Room in La Virginia, Marbella',
@@ -1908,6 +2270,15 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'parque-urbano-fuensanta',
+    image: '/parque-urbano-fuensanta-1.jpg',
+    images: [
+      '/parque-urbano-fuensanta-2.jpg',
+      '/parque-urbano-fuensanta-3.jpg',
+      '/parque-urbano-fuensanta-4.jpg',
+      '/parque-urbano-fuensanta-5.jpg',
+      '/parque-urbano-fuensanta-6.jpg',
+      '/parque-urbano-fuensanta-7.jpg',
+    ],
     title: {
       es: 'Parque Urbano en Fuensanta',
       en: 'Fuensanta Urban Park',
@@ -1940,6 +2311,14 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'fin-master-arquitectura',
+    image: '/fin-master-arquitectura-1.jpg',
+    images: [
+      '/fin-master-arquitectura-2.jpg',
+      '/fin-master-arquitectura-3.jpg',
+      '/fin-master-arquitectura-4.jpg',
+      '/fin-master-arquitectura-5.jpg',
+      '/fin-master-arquitectura-6.jpg',
+    ],
     title: {
       es: 'Fin de Máster en Arquitectura',
       en: "Architecture Master's Thesis",
@@ -1971,6 +2350,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'british-school-marbella-2015',
+    image: '/british-school-marbella-2015-1.jpg',
+    images: [
+      '/british-school-marbella-2015-2.jpg',
+      '/british-school-marbella-2015-3.jpg',
+      '/british-school-marbella-2015-4.jpg',
+      '/british-school-marbella-2015-5.jpg',
+    ],
     title: {
       es: 'British School Marbella',
       en: 'British School Marbella',
@@ -2002,6 +2388,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'pergola-piscina',
+    image: '/pergola-piscina-1.jpg',
+    images: [
+      '/pergola-piscina-2.jpg',
+      '/pergola-piscina-3.jpg',
+    ],
     title: {
       es: 'Pérgola de Piscina, Marbella',
       en: 'Pool Pergola, Marbella',
@@ -2033,6 +2424,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-elena',
+    image: '/villa-elena-1.jpg',
+    images: [
+      '/villa-elena-2.jpg',
+      '/villa-elena-3.jpg',
+      '/villa-elena-4.jpg',
+      '/villa-elena-5.jpg',
+    ],
     title: {
       es: 'Villa Elena',
       en: 'Villa Elena',
@@ -2064,6 +2462,14 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-travertino',
+    image: '/villa-travertino-1.jpg',
+    images: [
+      '/villa-travertino-2.jpg',
+      '/villa-travertino-3.jpg',
+      '/villa-travertino-4.jpg',
+      '/villa-travertino-5.jpg',
+      '/villa-travertino-6.jpg',
+    ],
     title: {
       es: 'Villa Travertino',
       en: 'Villa Travertino',
@@ -2095,6 +2501,14 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-beata',
+    image: '/villa-beata-1.jpg',
+    images: [
+      '/villa-beata-2.jpg',
+      '/villa-beata-3.jpg',
+      '/villa-beata-4.jpg',
+      '/villa-beata-5.jpg',
+      '/villa-beata-6.jpg',
+    ],
     title: {
       es: 'Villa Beata, Marbella',
       en: 'Villa Beata, Marbella',
@@ -2126,6 +2540,12 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-saraya',
+    image: '/villa-saraya-1.jpg',
+    images: [
+      '/villa-saraya-2.jpg',
+      '/villa-saraya-3.jpg',
+      '/villa-saraya-4.jpg',
+    ],
     title: {
       es: 'Villa Saraya, Sierra Blanca',
       en: 'Villa Saraya, Sierra Blanca',
@@ -2157,6 +2577,11 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-olga',
+    image: '/villa-olga-1.jpg',
+    images: [
+      '/villa-olga-2.jpg',
+      '/villa-olga-3.jpg',
+    ],
     title: {
       es: 'Villa Olga',
       en: 'Villa Olga',
@@ -2188,6 +2613,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-alicates-playas',
+    image: '/villa-alicates-playas-1.jpg',
+    images: [
+      '/villa-alicates-playas-2.jpg',
+      '/villa-alicates-playas-3.jpg',
+      '/villa-alicates-playas-4.jpg',
+      '/villa-alicates-playas-5.jpg',
+    ],
     title: {
       es: 'Villa en Alicates Playas, Marbella',
       en: 'Villa in Alicates Playas, Marbella',
@@ -2223,6 +2655,13 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'hermes-mansion',
+    image: '/hermes-mansion-1.jpg',
+    images: [
+      '/hermes-mansion-2.jpg',
+      '/hermes-mansion-3.jpg',
+      '/hermes-mansion-4.jpg',
+      '/hermes-mansion-5.jpg',
+    ],
     title: {
       es: 'Hermes Mansión, Marbella Golf Resort',
       en: 'Hermes Mansion, Marbella Golf Resort',
@@ -2254,6 +2693,12 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 'villa-loriana',
+    image: '/villa-loriana-1.jpg',
+    images: [
+      '/villa-loriana-2.jpg',
+      '/villa-loriana-3.jpg',
+      '/villa-loriana-4.jpg',
+    ],
     title: {
       es: 'Villa Loriana, Marbella',
       en: 'Villa Loriana, Marbella',

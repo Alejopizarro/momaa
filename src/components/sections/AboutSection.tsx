@@ -23,7 +23,7 @@ export function AboutSection() {
           <div className="relative order-2 lg:order-1">
             <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
               <img
-                src="https://momaa.es/wp-content/uploads/2019/11/momaa-sobre-nosotros-1.jpg"
+                src="/about-us.jpg"
                 alt="MoMaA estudio de arquitectura"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
