@@ -293,12 +293,9 @@ export default function ProjectPage({
 
       {/* Gallery */}
       {(() => {
-        // Construye los slots: imagen principal + adicionales, máximo 4 visibles
+        // Máximo 4 imágenes visibles; el grid se adapta al número real disponible
         const allImages = [heroImage, ...(detail.images ?? [])];
-        const visibleSlots: (string | null)[] = Array.from(
-          { length: 4 },
-          (_, i) => allImages[i] ?? null,
-        );
+        const visibleImages = allImages.slice(0, 4);
         const hasMore = allImages.length > 4;
         const extraCount = allImages.length - 4;
 
@@ -332,35 +329,84 @@ export default function ProjectPage({
                 )}
               </div>
 
-              {/* Grid asimétrico 2 filas */}
+              {/* Grid asimétrico, adaptado al número de imágenes (1 a 4) */}
               <div className="flex flex-col gap-[3px]">
-                {/* Fila 1: 2/3 + 1/3 */}
-                <div className="flex flex-col md:flex-row gap-[3px]">
+                {visibleImages.length === 1 && (
                   <GallerySlot
-                    src={visibleSlots[0]}
+                    src={visibleImages[0]}
                     alt={`${title} 1`}
-                    className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
+                    className="w-full h-[70vw] md:h-[520px]"
                   />
-                  <GallerySlot
-                    src={visibleSlots[1]}
-                    alt={`${title} 2`}
-                    className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
-                  />
-                </div>
+                )}
 
-                {/* Fila 2: 1/3 + 2/3 */}
-                <div className="flex flex-col md:flex-row gap-[3px]">
-                  <GallerySlot
-                    src={visibleSlots[2]}
-                    alt={`${title} 3`}
-                    className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
-                  />
-                  <GallerySlot
-                    src={visibleSlots[3]}
-                    alt={`${title} 4`}
-                    className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
-                  />
-                </div>
+                {visibleImages.length === 2 && (
+                  <div className="flex flex-col md:flex-row gap-[3px]">
+                    <GallerySlot
+                      src={visibleImages[0]}
+                      alt={`${title} 1`}
+                      className="w-full md:w-2/3 h-[56vw] md:h-[420px]"
+                    />
+                    <GallerySlot
+                      src={visibleImages[1]}
+                      alt={`${title} 2`}
+                      className="w-full md:w-1/3 h-[56vw] md:h-[420px]"
+                    />
+                  </div>
+                )}
+
+                {visibleImages.length === 3 && (
+                  <>
+                    <div className="flex flex-col md:flex-row gap-[3px]">
+                      <GallerySlot
+                        src={visibleImages[0]}
+                        alt={`${title} 1`}
+                        className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
+                      />
+                      <GallerySlot
+                        src={visibleImages[1]}
+                        alt={`${title} 2`}
+                        className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
+                      />
+                    </div>
+                    <GallerySlot
+                      src={visibleImages[2]}
+                      alt={`${title} 3`}
+                      className="w-full h-[56vw] md:h-[380px]"
+                    />
+                  </>
+                )}
+
+                {visibleImages.length >= 4 && (
+                  <>
+                    {/* Fila 1: 2/3 + 1/3 */}
+                    <div className="flex flex-col md:flex-row gap-[3px]">
+                      <GallerySlot
+                        src={visibleImages[0]}
+                        alt={`${title} 1`}
+                        className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
+                      />
+                      <GallerySlot
+                        src={visibleImages[1]}
+                        alt={`${title} 2`}
+                        className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
+                      />
+                    </div>
+
+                    {/* Fila 2: 1/3 + 2/3 */}
+                    <div className="flex flex-col md:flex-row gap-[3px]">
+                      <GallerySlot
+                        src={visibleImages[2]}
+                        alt={`${title} 3`}
+                        className="w-full md:w-1/3 h-[56vw] md:h-[380px]"
+                      />
+                      <GallerySlot
+                        src={visibleImages[3]}
+                        alt={`${title} 4`}
+                        className="w-full md:w-2/3 h-[56vw] md:h-[380px]"
+                      />
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </section>
