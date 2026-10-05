@@ -2,11 +2,17 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import Script from "next/script";
+import {
+  InstagramCard,
+  MobileInstagramCard,
+} from "@/components/sections/grid-instagram";
 
 interface ProjectGalleryProps {
   images: string[];
   title: string;
   lang: "es" | "en";
+  instagramVideoUrl?: string;
 }
 
 function Slot({
@@ -38,7 +44,12 @@ function Slot({
   );
 }
 
-export function ProjectGallery({ images, title, lang }: ProjectGalleryProps) {
+export function ProjectGallery({
+  images,
+  title,
+  lang,
+  instagramVideoUrl,
+}: ProjectGalleryProps) {
   const visibleImages = images.slice(0, 4);
   const hasMore = images.length > 4;
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -68,38 +79,37 @@ export function ProjectGallery({ images, title, lang }: ProjectGalleryProps) {
     };
   }, [lightboxIndex, close, showPrev, showNext]);
 
-  if (images.length === 0) return null;
+  if (images.length === 0 && !instagramVideoUrl) return null;
 
-  return (
-    <section className="py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-8 md:px-16">
-        {/* Header galería */}
-        <div className="flex items-center justify-between mb-8">
-          <p className="text-[9px] uppercase tracking-[0.4em] text-black/30">
-            {lang === "es" ? "Galería" : "Gallery"}
-          </p>
-          {hasMore && (
-            <button
-              type="button"
-              onClick={() => setLightboxIndex(0)}
-              className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-[#E8572A] hover:text-[#d14820] transition-colors duration-200"
-            >
-              {lang === "es" ? `Ver todo (${images.length})` : `See all (${images.length})`}
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path
-                  d="M2 6h8M6 2l4 4-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                  strokeLinecap="square"
-                />
-              </svg>
-            </button>
-          )}
-        </div>
+  const galleryGrid = (
+    <>
+      {/* Header galería */}
+      <div className="flex items-center justify-between mb-8">
+        <p className="text-[9px] uppercase tracking-[0.4em] text-black/30">
+          {lang === "es" ? "Galería" : "Gallery"}
+        </p>
+        {hasMore && (
+          <button
+            type="button"
+            onClick={() => setLightboxIndex(0)}
+            className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-[#E8572A] hover:text-[#d14820] transition-colors duration-200"
+          >
+            {lang === "es" ? `Ver todo (${images.length})` : `See all (${images.length})`}
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path
+                d="M2 6h8M6 2l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="square"
+              />
+            </svg>
+          </button>
+        )}
+      </div>
 
-        {/* Grid asimétrico, adaptado al número de imágenes visibles (1 a 4) */}
-        <div className="flex flex-col gap-[3px]">
-          {visibleImages.length === 1 && (
+      {/* Grid asimétrico, adaptado al número de imágenes visibles (1 a 4) */}
+      <div className="flex flex-col gap-[3px]">
+        {visibleImages.length === 1 && (
             <Slot
               src={visibleImages[0]}
               alt={`${title} 1`}
@@ -186,6 +196,46 @@ export function ProjectGallery({ images, title, lang }: ProjectGalleryProps) {
             </>
           )}
         </div>
+    </>
+  );
+
+  return (
+    <section className="py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-8 md:px-16">
+        {instagramVideoUrl ? (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 items-start">
+            <div className="lg:col-span-1">
+              <Script
+                src="//www.instagram.com/embed.js"
+                strategy="afterInteractive"
+                onLoad={() => {
+                  const win = window as typeof window & {
+                    instgrm?: { Embeds: { process(): void } };
+                  };
+                  win.instgrm?.Embeds.process();
+                }}
+              />
+              <p className="text-[9px] uppercase tracking-[0.4em] text-black/30 mb-8">
+                Instagram
+              </p>
+              <div className="md:hidden">
+                <MobileInstagramCard
+                  post={{ url: instagramVideoUrl, description: title }}
+                  index={0}
+                />
+              </div>
+              <div className="hidden md:block">
+                <InstagramCard
+                  post={{ url: instagramVideoUrl, description: title }}
+                  index={0}
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-2">{galleryGrid}</div>
+          </div>
+        ) : (
+          galleryGrid
+        )}
       </div>
 
       {/* Lightbox */}

@@ -96,7 +96,7 @@ function CardSkeleton() {
 // ─── Mobile card (shown on < md) ──────────────────────────────────────────────
 // Instagram embeds don't support inline video playback on iOS mobile browsers.
 // This card shows the thumbnail and links directly to Instagram/the app.
-function MobileInstagramCard({
+export function MobileInstagramCard({
   post,
   index,
 }: {
@@ -262,7 +262,7 @@ function MobileInstagramCard({
 }
 
 // ─── Desktop card (shown on >= md) ────────────────────────────────────────────
-function InstagramCard({
+export function InstagramCard({
   post,
   index,
 }: {

@@ -287,6 +287,10 @@ export const projects: Project[] = [
     titleEn: "Los Monteros Bungalow Renovation",
     category: "Residencial",
     year: "2021",
+    description:
+      "Bungalow Los Monteros, Marbella: vivienda de los años 70 rehabilitada en clave contemporánea, con una planta cubierta abierta al paisaje y jardines de bajo consumo hídrico.",
+    descriptionEn:
+      "Los Monteros Bungalow, Marbella: a 1970s home renovated with a contemporary approach, featuring an open rooftop retreat and a low-water-consumption garden.",
     url: "https://momaa.es/bungalow-los-monteros-marbella/",
     image: "/bungalow-monteros.jpg",
   },
@@ -622,6 +626,10 @@ export const projects: Project[] = [
     title: "Villa Ocean",
     category: "Residencial",
     year: "2015",
+    description:
+      "Villa Ocean, Marbella: vivienda unifamiliar contemporánea en una de las zonas más privilegiadas de la ciudad, concebida en diálogo constante con el mar Mediterráneo y materiales de alta calidad.",
+    descriptionEn:
+      "Villa Ocean, Marbella: a contemporary single-family home in one of the city's most privileged areas, conceived in constant dialogue with the Mediterranean Sea and finished with high-quality materials.",
     url: "https://momaa.es/villa-ocean/",
     image: "/villa-ocean.jpg",
   },

@@ -267,9 +267,10 @@ export default function ProjectPage({
         </div>
       </div>
 
-      {/* Gallery */}
+      {/* Gallery (+ Instagram video, side by side on desktop) */}
       <ProjectGallery
         images={[heroImage, ...(detail.images ?? [])]}
+        instagramVideoUrl={detail.instagramVideoUrl}
         title={title}
         lang={lang}
       />

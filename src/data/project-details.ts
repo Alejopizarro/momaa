@@ -12,9 +12,57 @@ export interface ProjectDetail {
   images?: string[];
   externalUrl?: string;
   externalLabel?: { es: string; en: string };
+  instagramVideoUrl?: string;
 }
 
 export const projectDetails: ProjectDetail[] = [
+  {
+    id: "cubierta-pabellon-carlos-cabezas",
+    image: "/cubierta-pabellon-carlos-cabezas-1.jpeg",
+    images: [
+      "/cubierta-pabellon-carlos-cabezas-2.jpeg",
+      "/cubierta-pabellon-carlos-cabezas-3.jpeg",
+      "/cubierta-pabellon-carlos-cabezas-4.jpeg",
+      "/cubierta-pabellon-carlos-cabezas-5.jpeg",
+      "/cubierta-pabellon-carlos-cabezas-6.jpg",
+    ],
+    title: {
+      es: "Cubierta Pista Deportiva Pabellón Carlos Cabezas, Marbella",
+      en: "Sports Court Roof — Carlos Cabezas Pavilion, Marbella",
+    },
+    category: {
+      es: "Espacio Público",
+      en: "Public Space",
+    },
+    year: "2024",
+    architects: ["Andrés M. Mateo Fernández. Arquitecto"],
+    studio: "MoMaA",
+    location: "Marbella, Málaga",
+    disciplines: {
+      es: ["Arquitectura", "Urbanismo", "Diseño"],
+      en: ["Architecture", "Urban Planning", "Design"],
+    },
+    body: {
+      es: [
+        'La actuación de este proyecto se enmarca en la Pista Deportiva Exterior y en los cerramientos exteriores del Polideportivo Municipal "Carlos Cabezas", situado en la Calle Camino Cristo de los Molinos de Marbella. La instalación deportiva se ubica en la Urbanización "El Real Panorama" de la localidad.',
+        "Actualmente, la zona de intervención se encuentra en buen estado y funcionamiento. El objetivo del proyecto es cubrir la pista exterior para poder darle mayor uso independientemente de la climatología.",
+        "El ámbito de actuación total será de 1.222 m², con una longitud total de 47 m y un ancho de 26 m, y presenta una ligera pendiente transversal descendente hacia el este para la actual evacuación de pluviales (0,7%). Mediante la realización del presente proyecto se busca la adecuación de esta pista multideportiva para su uso más confortable en diferentes condiciones climatológicas.",
+        "Las obras de cubrición, proyectadas y dirigidas por MoMaA, se encuentran actualmente en ejecución. La intervención ampliará el espacio cubierto del pabellón en aproximadamente 1.100 m², con una inversión cercana a 700.000 euros, lo que permitirá duplicar la capacidad de las instalaciones y acoger a un mayor número de participantes en eventos deportivos como el Campus Carlos Cabezas, consolidando a Marbella como referente en la formación del deporte base.",
+      ],
+      en: [
+        'This project focuses on the outdoor sports court and perimeter enclosures of the "Carlos Cabezas" Municipal Sports Center, located on Camino Cristo de los Molinos in Marbella, within the "El Real Panorama" urbanization.',
+        "Currently, the area is in good condition and fully operational. The main goal is to cover the outdoor court to allow for greater use regardless of weather conditions.",
+        "The intervention will cover a total area of 1,222 m², with dimensions of 47 meters in length and 26 meters in width, and a slight eastward slope (0.7%) for rainwater drainage. The project aims to adapt and enhance the multisport court, making it more comfortable and accessible year-round.",
+        "The roofing works, designed and directed by MoMaA, are currently underway. The intervention will expand the pavilion's covered area by approximately 1,100 m², with an investment of nearly €700,000, doubling the facility's capacity and allowing it to host a greater number of participants in sporting events such as the Carlos Cabezas Campus — further establishing Marbella as a benchmark for grassroots sports training.",
+      ],
+    },
+    externalUrl:
+      "https://www.marbella.es/actualidad/noticias/marbella-refuerza-su-apuesta-por-el-deporte-base-con-la-segunda-edicion-del-campus-carlos-cabezas-que-tendra-lugar-del-6-al-11-de-julio.html",
+    externalLabel: {
+      es: "Ver nota de prensa",
+      en: "Read press release",
+    },
+  },
   {
     id: "rehabilitacion-consistorial-marbella",
     image: "/ayuntamiento-marbella.jpg",
@@ -160,38 +208,6 @@ export const projectDetails: ProjectDetail[] = [
     externalLabel: {
       es: "Ver en Instagram",
       en: "View on Instagram",
-    },
-  },
-  {
-    id: "cubierta-pabellon-carlos-cabezas",
-    image: "/pabellon-carlos-cabezas.jpg",
-    title: {
-      es: "Cubierta Pista Deportiva Pabellón Carlos Cabezas, Marbella",
-      en: "Sports Court Roof — Carlos Cabezas Pavilion, Marbella",
-    },
-    category: {
-      es: "Espacio Público",
-      en: "Public Space",
-    },
-    year: "2024",
-    architects: ["Andrés M. Mateo Fernández. Arquitecto"],
-    studio: "MoMaA",
-    location: "Marbella, Málaga",
-    disciplines: {
-      es: ["Arquitectura", "Urbanismo", "Diseño"],
-      en: ["Architecture", "Urban Planning", "Design"],
-    },
-    body: {
-      es: [
-        'La actuación de este proyecto se enmarca en la Pista Deportiva Exterior y en los cerramientos exteriores del Polideportivo Municipal "Carlos Cabezas", situado en la Calle Camino Cristo de los Molinos de Marbella. La instalación deportiva se ubica en la Urbanización "El Real Panorama" de la localidad.',
-        "Actualmente, la zona de intervención se encuentra en buen estado y funcionamiento. El objetivo del proyecto es cubrir la pista exterior para poder darle mayor uso independientemente de la climatología.",
-        "El ámbito de actuación total será de 1.222 m², con una longitud total de 47 m y un ancho de 26 m, y presenta una ligera pendiente transversal descendente hacia el este para la actual evacuación de pluviales (0,7%). Mediante la realización del presente proyecto se busca la adecuación de esta pista multideportiva para su uso más confortable en diferentes condiciones climatológicas.",
-      ],
-      en: [
-        'This project focuses on the outdoor sports court and perimeter enclosures of the "Carlos Cabezas" Municipal Sports Center, located on Camino Cristo de los Molinos in Marbella, within the "El Real Panorama" urbanization.',
-        "Currently, the area is in good condition and fully operational. The main goal is to cover the outdoor court to allow for greater use regardless of weather conditions.",
-        "The intervention will cover a total area of 1,222 m², with dimensions of 47 meters in length and 26 meters in width, and a slight eastward slope (0.7%) for rainwater drainage. The project aims to adapt and enhance the multisport court, making it more comfortable and accessible year-round.",
-      ],
     },
   },
   {
@@ -653,6 +669,8 @@ export const projectDetails: ProjectDetail[] = [
   {
     id: "centro-usos-multiples-ermita-calvario",
     image: "/centro-usos-multiples-ermita-calvario.jpg",
+    instagramVideoUrl:
+      "https://www.instagram.com/reel/DcS-97GoRev/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
     title: {
       es: "Centro de Usos Múltiples junto a la Ermita del Calvario",
       en: "Multi-Use Centre at the Ermita del Calvario",

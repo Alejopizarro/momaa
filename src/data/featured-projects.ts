@@ -2,11 +2,11 @@ import { projects, type Project } from "@/data/projects";
 import { getProjectDetail } from "@/data/project-details";
 
 export const FEATURED_PROJECT_IDS = [
-  "rehabilitacion-consistorial-marbella",
+  "cubierta-pabellon-carlos-cabezas",
+  "villa-ocean",
   "the-deck-benahavis",
   "casa-allure-marbella",
-  "las-joyas-estepona",
-  "cubierta-pabellon-carlos-cabezas",
+  "bungalow-los-monteros",
   "el-trapiche-casa-8",
 ];
 
