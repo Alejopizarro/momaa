@@ -385,7 +385,7 @@ export const newsArticles: NewsArticle[] = [
   {
     slug: "cedula-de-habitabilidad-o-primera-ocupacion",
     image: "/Como-se-obtiene-la-cedula-de-habitabilidad.webp",
-    publishedDate: "2026-09-50",
+    publishedDate: "2026-09-05",
     category: {
       es: "Guías",
       en: "Guides",
